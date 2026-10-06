@@ -45,7 +45,7 @@ describe('config', () => {
     const text = serializeConfig({ scheme: 'demo', routes: ['/a'] }, 'ts');
     expect(text).toContain("import { defineConfig } from 'fixpoint'");
     expect(text).toContain('scheme: "demo"');
-    expect(serializeConfig({ scheme: 'demo' })).not.toContain('import');
+    expect(serializeConfig({ scheme: 'demo' })).not.toContain('import {');
     expect(resolveConfig({}, '/x').appRoot).toBe('/x');
   });
 });
@@ -53,7 +53,7 @@ describe('config', () => {
 describe('routes', () => {
   it('derives Expo Router routes, strips groups, and reports skipped files', () => {
     const dir = tmp();
-    const files = ['app/_layout.tsx', 'app/+not-found.tsx', 'app/index.tsx', 'app/(auth)/(tabs)/_layout.tsx', 'app/(auth)/(tabs)/home/index.tsx', 'app/(auth)/(tabs)/home/HomeShimmer.tsx', 'app/(auth)/(tabs)/user/use-profile.ts', 'app/(auth)/(modal)/post/[id].tsx', 'app/(auth)/(modal)/post/[id]/edit.tsx', 'app/api/hello+api.ts', 'app/settings.tsx'];
+    const files = ['app/_layout.tsx', 'app/+not-found.tsx', 'app/index.tsx', 'app/(auth)/(tabs)/_layout.tsx', 'app/(auth)/(tabs)/home/index.tsx', 'app/(auth)/(tabs)/home/HomeShimmer.tsx', 'app/(auth)/(tabs)/home/index.ui.tsx', 'app/(auth)/(tabs)/home/_components/card.tsx', 'app/(auth)/(tabs)/user/use-profile.ts', 'app/(auth)/(modal)/post/[id].tsx', 'app/(auth)/(modal)/post/[id]/edit.tsx', 'app/api/hello+api.ts', 'app/settings.tsx'];
     for (const f of files) {
       mkdirSync(join(dir, f, '..'), { recursive: true });
       writeFileSync(join(dir, f), 'export default function X() { return null }\n');
@@ -63,6 +63,8 @@ describe('routes', () => {
     expect(byPath['/']).toMatchObject({ href: '/', skipped: null });
     expect(byPath['/home']).toMatchObject({ href: '/home', file: 'app/(auth)/(tabs)/home/index.tsx' });
     expect(byPath['/home/HomeShimmer']?.skipped).toMatch(/component or hook/);
+    expect(byPath['/home/index.ui']?.skipped).toMatch(/component or hook/);
+    expect(byPath['/home/_components/card']?.skipped).toMatch(/_private/);
     expect(byPath['/post/[id]']).toMatchObject({ href: '/post/7', dynamic: ['id'] });
     expect(byPath['/post/[id]/edit']).toMatchObject({ href: null, skipped: 'needs params: id' });
     expect(byPath['/settings']).toMatchObject({ href: null, skipped: 'excluded by config' });

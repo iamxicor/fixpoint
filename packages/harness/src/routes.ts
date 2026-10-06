@@ -43,7 +43,11 @@ export function discoverRoutes(appRoot: string, config?: Pick<FixpointConfig, 'r
     if (/\.(test|spec|stories)$/.test(name)) continue;
     const segments = rel.replace(/\.[^.]+$/, '').split('/');
     const last = segments[segments.length - 1]!;
-    if (/^[A-Z]/.test(last) || /^use-/.test(last)) {
+    if (segments.some((seg) => seg.startsWith('_'))) {
+      out.push({ file, path: toPath(segments), dynamic: [], href: null, skipped: 'under a _private directory' });
+      continue;
+    }
+    if (/^[A-Z]/.test(last) || /^use-/.test(last) || last.includes('.')) {
       out.push({ file, path: toPath(segments), dynamic: [], href: null, skipped: 'component or hook file, not a screen' });
       continue;
     }
