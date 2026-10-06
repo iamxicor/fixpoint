@@ -149,7 +149,7 @@ export async function runAb(opts: AbOptions): Promise<Verdict> {
 
   const nf = opts.mode === 'aa' ? noiseFloorFromAA(records, `aa ${slug} ${stamp}`) : noiseFloor!;
   const decision = decide({ mode: opts.mode, pairs: records, noiseFloor: nf, controlFrames, thresholds: cfg.thresholds });
-  const foreign = foreignDriverEvents(device.udid, startedAt.toISOString().replace('T', ' ').slice(0, 19), cfg.bundleId).filter((l) => !l.includes('expo-development-client'));
+  const foreign = foreignDriverEvents(device.udid, startedAt, cfg.bundleId);
   const verdict: Verdict = {
     version: 1,
     mode: opts.mode,
@@ -197,7 +197,7 @@ export async function runAb(opts: AbOptions): Promise<Verdict> {
     const sessionOpts: SessionOptions = { device, bundleId: cfg.bundleId, scheme: cfg.scheme, metroUrl: v.metro.url, interactions: cfg.interactions, log };
     const session = await AppSession.coldStart({ ...sessionOpts, captureStartup: false });
     try {
-      const home = (await session.routeInfo())?.pathname ?? '/';
+      const home = await session.settleRoute();
       // visit discipline: warm visit first, measure the second
       await session.navigate(opts.route);
       await sleep(Math.min(cfg.settleMs, 1500));

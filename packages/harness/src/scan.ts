@@ -90,7 +90,8 @@ export async function scanApp(opts: ScanOptions): Promise<ScanIndex> {
     session = await AppSession.attach(sessionOpts);
   }
 
-  const home = (await session.routeInfo())?.pathname ?? '/';
+  const home = await session.settleRoute();
+  log(`home route ${home}`);
   for (const route of wanted) {
     const entry = index.routes.find((r) => r.path === route.path)!;
     try {

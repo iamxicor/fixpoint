@@ -126,6 +126,22 @@ export class AppSession {
     return this.client.expoRouter.routeInfo();
   }
 
+  /** Waits until the route stops changing (index redirects settle), then returns the pathname. */
+  async settleRoute(stableMs = 1_200, timeoutMs = 20_000): Promise<string> {
+    const t0 = Date.now();
+    let last = (await this.routeInfo())?.pathname ?? '/';
+    let since = Date.now();
+    while (Date.now() - t0 < timeoutMs) {
+      await sleep(300);
+      const now = (await this.routeInfo())?.pathname ?? last;
+      if (now !== last) {
+        last = now;
+        since = Date.now();
+      } else if (Date.now() - since >= stableMs) return last;
+    }
+    return last;
+  }
+
   async navigate(href: string, timeoutMs = 15_000): Promise<RouteInfo> {
     await this.client.expoRouter.navigate(href);
     this.scrollOffset = 0;

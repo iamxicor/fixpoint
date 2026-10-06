@@ -201,11 +201,21 @@ export function idbSwipe(udid: string, x1: number, y1: number, x2: number, y2: n
   execFileSync('idb', ['ui', 'swipe', '--udid', udid, '--duration', String(durationMs / 1000), String(x1), String(y1), String(x2), String(y2)], { stdio: 'ignore', timeout: 20_000 });
 }
 
-/** Lines the simulator's own log shows when something else drives the app (foreign launches, URLs). */
-export function foreignDriverEvents(udid: string, sinceIso: string, bundleId: string): string[] {
+/** `log show --start` wants local time, `YYYY-MM-DD HH:MM:SS`. */
+export function logShowTime(d: Date): string {
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+}
+
+/**
+ * Deep links opened on the app by something other than this harness during the window (the harness
+ * only ever opens `expo-development-client` URLs). Launches and terminations cannot be attributed, so
+ * they are not reported.
+ */
+export function foreignDriverEvents(udid: string, since: Date, bundleId: string): string[] {
   try {
-    const out = simctl(['spawn', udid, 'log', 'show', '--start', sinceIso, '--predicate', `process == "CoreSimulatorBridge" AND eventMessage CONTAINS "${bundleId}"`, '--style', 'compact'], { timeoutMs: 120_000 });
-    return out.split('\n').filter((l) => /Opening URL|Requesting launch|terminate application/.test(l));
+    const out = simctl(['spawn', udid, 'log', 'show', '--start', logShowTime(since), '--predicate', `process == "CoreSimulatorBridge" AND eventMessage CONTAINS "${bundleId}" AND eventMessage CONTAINS "Opening URL"`, '--style', 'compact'], { timeoutMs: 120_000 });
+    return out.split('\n').filter((l) => /Opening URL/.test(l) && !/expo-development-client/.test(l));
   } catch {
     return [];
   }
