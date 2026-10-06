@@ -116,6 +116,26 @@ export class AppSession {
     return pid !== null && (this.pid === null || pid === this.pid) && this.client.cdp.isOpen;
   }
 
+  /**
+   * True when a React error boundary is showing its fallback: any mounted class component whose
+   * state has a truthy `hasError`/`didCatch`, or a truthy `error` on a class that defines
+   * `getDerivedStateFromError`. Covers react-error-boundary and the usual hand-written ones.
+   */
+  async errorBoundaryActive(): Promise<string | null> {
+    try {
+      return await this.client.runtime.evaluate<string | null>(ERROR_BOUNDARY_JS, 15_000);
+    } catch {
+      return null;
+    }
+  }
+
+  /** Alive and not showing an error boundary. */
+  async healthy(): Promise<{ ok: boolean; reason: string | null }> {
+    if (!this.alive()) return { ok: false, reason: 'app process or debugger socket gone' };
+    const eb = await this.errorBoundaryActive();
+    return eb ? { ok: false, reason: `error boundary active (${eb})` } : { ok: true, reason: null };
+  }
+
   close(): void {
     this.client.disconnect();
   }
@@ -313,6 +333,25 @@ const SCROLL_JS = (offset: number) => `(function(){
     best.scrollTo({ x: 0, y: ${offset}, animated: true });
     return 'ok';
   } catch (e) { return 'error: ' + (e && e.message || e); }
+})()`;
+
+const ERROR_BOUNDARY_JS = `(function(){
+  try {
+    var hook = globalThis.__REACT_DEVTOOLS_GLOBAL_HOOK__; if (!hook || !hook.renderers) return null;
+    var found = null;
+    hook.renderers.forEach(function(_r, id){ hook.getFiberRoots(id).forEach(function(root){
+      var stack = [root.current];
+      while (stack.length && !found) { var f = stack.pop(); if (!f) continue;
+        if (f.tag === 1 && f.stateNode && f.stateNode.state) {
+          var st = f.stateNode.state; var ctor = f.type;
+          var caught = !!(st.hasError || st.didCatch) || (!!st.error && ctor && typeof ctor.getDerivedStateFromError === 'function');
+          if (caught) { found = (ctor && (ctor.displayName || ctor.name)) || 'ErrorBoundary'; break; }
+        }
+        if (f.child) stack.push(f.child); if (f.sibling) stack.push(f.sibling);
+      }
+    }); });
+    return found;
+  } catch (e) { return null; }
 })()`;
 
 const TAP_JS = (t: { testID?: string; label?: string }) => `(function(){

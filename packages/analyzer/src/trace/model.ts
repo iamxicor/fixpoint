@@ -16,7 +16,7 @@ export interface ComponentRender {
   selfUs: number;
   color: string | null;
   /** 'render' entries come from console.timeStamp; 'changed-props' from performance.measure with a diff; 'effect' are secondary colours. */
-  kind: 'render' | 'changed-props' | 'effect' | 'trigger';
+  kind: 'render' | 'changed-props' | 'effect' | 'trigger' | 'error';
   diff: PropsDiff | null;
   tooltip: string | null;
   commit: number;
@@ -142,7 +142,7 @@ export function buildModel(trace: TraceFile): TraceModel {
     if (!dt || dt.track !== COMPONENTS_TRACK) continue;
     const name = m.name.startsWith(ZWSP) ? m.name.slice(1) : m.name;
     const diff = parsePropsDiff(dt.properties);
-    const kind: ComponentRender['kind'] = diff ? 'changed-props' : dt.color === 'warning' ? 'trigger' : isEffectColor(dt.color) ? 'effect' : 'render';
+    const kind: ComponentRender['kind'] = diff ? 'changed-props' : /error/i.test(String(dt.tooltipText ?? '')) ? 'error' : dt.color === 'warning' ? 'trigger' : isEffectColor(dt.color) ? 'effect' : 'render';
     renders.push({ name, startUs: m.startUs, endUs: m.endUs, selfUs: 0, color: dt.color ?? null, kind, diff, tooltip: dt.tooltipText ?? null, commit: -1, parent: null, index: 0 });
   }
   renders.sort((a, b) => a.startUs - b.startUs || b.endUs - a.endUs);
@@ -204,12 +204,12 @@ export function buildModel(trace: TraceFile): TraceModel {
   for (const c of commits) {
     const stack: ComponentRender[] = [];
     for (const r of c.components) {
-      if (r.kind === 'effect' || r.kind === 'trigger') continue;
+      if (r.kind === 'effect' || r.kind === 'trigger' || r.kind === 'error') continue;
       while (stack.length && stack[stack.length - 1]!.endUs < r.startUs) stack.pop();
       r.parent = stack.length ? stack[stack.length - 1]!.index : null;
       stack.push(r);
     }
-    const rootCandidates = c.components.filter((r) => r.parent === null && r.kind !== 'effect' && r.kind !== 'trigger');
+    const rootCandidates = c.components.filter((r) => r.parent === null && r.kind !== 'effect' && r.kind !== 'trigger' && r.kind !== 'error');
     c.root = rootCandidates.sort((a, b) => b.endUs - b.startUs - (a.endUs - a.startUs))[0] ?? null;
     // self time = own span minus direct children spans
     const children = new Map<number, number>();

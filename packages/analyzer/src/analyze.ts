@@ -31,6 +31,8 @@ export async function analyze(input: AnalyzeInput): Promise<FindingsFile> {
       notes.push('Sampling data came from a separate .cpuprofile; its clock may not align with the trace.');
     }
     if (model.commits.length === 0) notes.push('No Scheduler ⚛ Render entries were found; React performance tracks may be unavailable in this build.');
+    const errored = model.renders.filter((r) => r.kind === 'error');
+    if (errored.length) notes.push(`${errored.length} error-boundary or errored-lifecycle entries in the recording (${[...new Set(errored.map((r) => r.name))].slice(0, 5).join(', ')}); the screen was probably not in a normal state.`);
   }
   const ctx: DetectorContext = {
     model,

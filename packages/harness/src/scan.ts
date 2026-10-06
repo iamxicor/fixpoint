@@ -96,25 +96,38 @@ export async function scanApp(opts: ScanOptions): Promise<ScanIndex> {
     index.startup = { findingsFile, modulesInitialized: s.modulesInitialized.length, readyMs: s.readyMs };
     log(`startup: ${s.modulesInitialized.length} modules initialised, ready in ${s.readyMs} ms`);
   } else {
-    session = await AppSession.attach(sessionOpts);
+    // never attach to whatever state the app is in; a cold start costs 20 s and guarantees a clean instance
+    session = await AppSession.coldStart({ ...sessionOpts, captureStartup: false });
   }
 
-  const home = await session.settleRoute();
+  let home = await session.settleRoute();
   log(`home route ${home}`);
+  const restart = async (why: string) => {
+    log(`${why}; cold-starting a fresh instance`);
+    session.close();
+    session = await AppSession.coldStart({ ...sessionOpts, captureStartup: false });
+    home = await session.settleRoute();
+  };
   for (const route of wanted) {
     const entry = index.routes.find((r) => r.path === route.path)!;
+    delete entry.error;
     try {
+      const health = await session.healthy();
+      if (!health.ok) await restart(health.reason!);
       const result = await scanRoute(session, route, { cfg, outDir, symbolicate, componentLocations, compiler, log, home });
-      entry.findingsFile = result.findingsFile;
-      entry.top = result.findings.findings.slice(0, 5).map((f) => ({ kind: f.kind, metric: f.metric.name, value: f.metric.value, severity: f.severity, symbol: f.location.symbol }));
+      const after = await session.errorBoundaryActive();
+      if (after) {
+        entry.error = `app showed an error boundary (${after}) after visiting the route; findings discarded`;
+        log(`route ${route.path}: ${entry.error}`);
+        await restart('error boundary');
+      } else {
+        entry.findingsFile = result.findingsFile;
+        entry.top = result.findings.findings.slice(0, 5).map((f) => ({ kind: f.kind, metric: f.metric.name, value: f.metric.value, severity: f.severity, symbol: f.location.symbol }));
+      }
     } catch (e) {
       entry.error = (e as Error).message;
       log(`route ${route.path} failed: ${(e as Error).message}`);
-      if (!session.alive()) {
-        log('app died; cold-starting again');
-        session.close();
-        session = await AppSession.coldStart({ ...sessionOpts, captureStartup: false });
-      }
+      await restart('route failed');
     }
     writeFileSync(join(outDir, 'index.json'), JSON.stringify(index, null, 2));
   }
