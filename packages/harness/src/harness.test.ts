@@ -18,6 +18,7 @@ import { compareBaseline, writeBaseline } from './baseline.js';
 import { prBody, prTitle } from './pr.js';
 import { renderResults } from './report.js';
 import { detectCommands } from './gates.js';
+import { overrideEnvVar, readEnvVar } from './metro.js';
 
 const root = fileURLToPath(new URL('../../../', import.meta.url));
 const tabsTrace = JSON.parse(readFileSync(join(root, 'fixtures/phase0/trace-tabs-scroll-ios-sim.json'), 'utf8')) as TraceFile;
@@ -145,6 +146,18 @@ describe('replay proxy', () => {
     expect(hits).toBe(before); // nothing reached upstream in replay mode
     expect(rep.stats).toMatchObject({ hits: 2, misses: 2, stubbed: 1, forwarded: 0 });
     expect(exchangeKey('GET', '/a', null)).not.toBe(exchangeKey('POST', '/a', null));
+  });
+});
+
+describe('env files', () => {
+  it('rewrites a variable in a worktree env file and reads it back', () => {
+    const dir = tmp();
+    writeFileSync(join(dir, '.env.development.local'), 'EXPO_PUBLIC_API_URL=https://api.example.com\nOTHER=1\n');
+    expect(readEnvVar(dir, 'EXPO_PUBLIC_API_URL')).toBe('https://api.example.com');
+    overrideEnvVar(dir, 'EXPO_PUBLIC_API_URL', 'http://127.0.0.1:8789');
+    expect(readFileSync(join(dir, '.env.development.local'), 'utf8')).toBe('EXPO_PUBLIC_API_URL=http://127.0.0.1:8789\nOTHER=1\n');
+    overrideEnvVar(dir, 'NEW_VAR', 'x');
+    expect(readEnvVar(dir, 'NEW_VAR')).toBe('x');
   });
 });
 

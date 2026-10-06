@@ -6,7 +6,7 @@ import { buildModel, selfTimeByFrame } from '@fixpoint/analyzer';
 import { AppSession, type SessionOptions } from './app-session.js';
 import type { FixpointConfig, ScenarioStep } from './config.js';
 import { visitMetrics, type VisitMetrics } from './metrics.js';
-import { changedFiles, devClientUrl, prepareWorktree, readEnvVar, startMetro, type MetroHandle } from './metro.js';
+import { changedFiles, devClientUrl, overrideEnvVar, prepareWorktree, readEnvVar, startMetro, type MetroHandle } from './metro.js';
 import { pixelDiff } from './gates.js';
 import { ReplayProxy } from './replay-proxy.js';
 import { routeSlug } from './routes.js';
@@ -91,6 +91,8 @@ export async function runAb(opts: AbOptions): Promise<Verdict> {
     proxy = new ReplayProxy({ upstream, dir: cfg.replay.dir, mode: cfg.replay.mode, port: cfg.replay.port });
     await proxy.start();
     env[cfg.apiBaseEnvVar] = proxy.url;
+    overrideEnvVar(base.dir, cfg.apiBaseEnvVar, proxy.url);
+    overrideEnvVar(cand.dir, cfg.apiBaseEnvVar, proxy.url);
     log(`replay proxy (${cfg.replay.mode}) at ${proxy.url} → ${upstream}`);
   }
   const metroA = await startMetro({ appRoot: base.dir, port: cfg.abPorts[0], env, logFile: join(outDir, 'metro-A.log') });

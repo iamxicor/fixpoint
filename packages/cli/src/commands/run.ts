@@ -3,7 +3,7 @@ import { basename, join, resolve } from 'node:path';
 import type { Command } from 'commander';
 import type { FindingsFile } from '@fixpoint/analyzer';
 import { renderTable } from '@fixpoint/analyzer';
-import { compareBaseline, loadConfig, prBody, prTitle, readScanIndex, renderResults, runAb, runGates, scanApp, validateScenario, visitMetrics, writeBaseline, type GatesReport, type Verdict } from '@fixpoint/harness';
+import { compareBaseline, loadConfig, prBody, prTitle, prepareWorktree, readScanIndex, renderResults, runAb, runGates, scanApp, startMetro, validateScenario, visitMetrics, writeBaseline, type GatesReport, type Verdict } from '@fixpoint/harness';
 import { gunzipSync } from 'node:zlib';
 
 const log = (m: string) => process.stderr.write(`[fixpoint] ${m}\n`);
@@ -15,9 +15,11 @@ export function registerRun(program: Command): void {
     .option('--dir <dir>', 'app directory', '.')
     .option('--skip-startup', 'do not cold-start for the startup capture')
     .option('--skip-compiler', 'do not run the React Compiler pass')
+    .option('--metro <url>', 'Metro URL to use instead of the configured one')
     .option('--json', 'print the scan index as JSON')
     .action(async (route: string | undefined, opts) => {
       const { config } = await loadConfig(resolve(opts.dir));
+      if (opts.metro) config.metroUrl = opts.metro;
       const index = await scanApp({ config, only: route ? [route] : undefined, log, skipStartup: !!opts.skipStartup, skipCompiler: !!opts.skipCompiler });
       if (opts.json) return void process.stdout.write(JSON.stringify(index, null, 2) + '\n');
       for (const r of index.routes) {
@@ -30,6 +32,28 @@ export function registerRun(program: Command): void {
         process.stdout.write(`\n== startup\n${renderTable(f, 5)}\n`);
       }
       process.stdout.write(`\nscan index: ${join(config.outDir, 'scan', 'index.json')}\n`);
+    });
+
+  program
+    .command('serve')
+    .description('Prepare a worktree for a git ref and run Metro for it on a port (foreground; Ctrl-C stops it)')
+    .requiredOption('--ref <ref>', 'git ref to serve')
+    .option('--port <n>', 'Metro port', '8091')
+    .option('--dir <dir>', 'app directory', '.')
+    .option('--name <name>', 'worktree name under the cache dir', 'serve')
+    .action(async (opts) => {
+      const { config } = await loadConfig(resolve(opts.dir));
+      const wt = await prepareWorktree({ repo: config.appRoot, ref: opts.ref, dir: join(config.outDir, 'worktrees', opts.name) });
+      log(`worktree ${wt.dir} at ${wt.sha.slice(0, 8)}`);
+      const metro = await startMetro({ appRoot: wt.dir, port: Number(opts.port), logFile: join(config.outDir, `metro-${opts.name}.log`), onLine: (l) => process.stderr.write(`[metro] ${l}\n`) });
+      process.stdout.write(JSON.stringify({ url: metro.url, worktree: wt.dir, sha: wt.sha, pid: metro.pid }) + '\n');
+      const stop = async () => {
+        await metro.stop();
+        process.exit(0);
+      };
+      process.on('SIGINT', stop);
+      process.on('SIGTERM', stop);
+      await new Promise(() => undefined);
     });
 
   program

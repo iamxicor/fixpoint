@@ -146,8 +146,9 @@ export async function runInit(dir: string, opts: { force?: boolean; print?: bool
   process.stdout.write(lines.join('\n') + '\n');
 }
 
-export async function runVerify(dir: string, opts: { json?: boolean }): Promise<boolean> {
+export async function runVerify(dir: string, opts: { json?: boolean; metro?: string }): Promise<boolean> {
   const { config, file } = await loadConfig(resolve(dir));
+  if (opts.metro) config.metroUrl = opts.metro;
   const lines: string[] = [];
   const results: Record<string, unknown> = {};
   let allOk = true;
@@ -221,6 +222,7 @@ export function registerProject(program: Command): void {
     .command('verify [dir]')
     .description('Connect to the running dev build, record two seconds, and check the React tracks')
     .option('--json', 'machine-readable output')
+    .option('--metro <url>', 'Metro URL to use instead of the configured one')
     .action(async (dir: string | undefined, opts) => {
       const good = await runVerify(dir ?? '.', opts);
       if (!good) process.exitCode = 1;

@@ -1,5 +1,5 @@
 import { execFileSync, spawn, type ChildProcess } from 'node:child_process';
-import { copyFileSync, createWriteStream, existsSync, mkdirSync, readFileSync } from 'node:fs';
+import { copyFileSync, createWriteStream, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { metroStatus } from '@fixpoint/devtools';
 
@@ -154,6 +154,34 @@ export function removeWorktree(repo: string, dir: string): void {
   } catch {
     // ignore
   }
+}
+
+/**
+ * Rewrites `KEY=value` in a worktree's env file (never the user's checkout). Expo inlines
+ * EXPO_PUBLIC_* at bundle time, so the replay proxy URL must be in the file Metro reads.
+ */
+export function overrideEnvVar(dir: string, key: string, value: string, files = ['.env.development.local', '.env.local', '.env.development', '.env']): string | null {
+  for (const f of files) {
+    const p = join(dir, f);
+    if (!existsSync(p)) continue;
+    const lines = readFileSync(p, 'utf8').split('\n');
+    let found = false;
+    const out = lines.map((line) => {
+      const m = /^\s*(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=/.exec(line);
+      if (m && m[1] === key) {
+        found = true;
+        return `${key}=${value}`;
+      }
+      return line;
+    });
+    if (found) {
+      writeFileSync(p, out.join('\n'));
+      return p;
+    }
+  }
+  const p = join(dir, files[0]!);
+  writeFileSync(p, `${existsSync(p) ? readFileSync(p, 'utf8').replace(/\n?$/, '\n') : ''}${key}=${value}\n`);
+  return p;
 }
 
 /** Reads `KEY=value` from the app's env files (first match wins, in the given order). */
