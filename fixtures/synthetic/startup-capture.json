@@ -1,0 +1,27 @@
+{
+  "modulesInitialized": [
+    "node_modules/expo-router/entry.js",
+    "node_modules/expo-router/build/index.js",
+    "node_modules/react-native/index.js",
+    "node_modules/react-native/Libraries/Core/InitializeCore.js",
+    "node_modules/@shopify/flash-list/dist/index.js",
+    "node_modules/react-native-reanimated/src/index.ts",
+    "node_modules/react-native-reanimated/src/core.ts",
+    "node_modules/moment/moment.js",
+    "app/_layout.tsx",
+    "app/(tabs)/_layout.tsx",
+    "app/(tabs)/home.tsx",
+    "app/(tabs)/settings.tsx",
+    "app/profile/[id].tsx",
+    "components/Button.tsx",
+    "hooks/use-auth.ts"
+  ],
+  "rnStartupTiming": {
+    "startTime": 1000,
+    "endTime": 1850,
+    "initializeRuntimeStart": 1000,
+    "executeJavaScriptBundleEntryPointStart": 1120
+  },
+  "firstRoute": "/home",
+  "firstRouteModule": "app/(tabs)/home.tsx"
+}

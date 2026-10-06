@@ -1,0 +1,20 @@
+{
+  "bailouts": [
+    {
+      "file": "components/NotificationRow.tsx",
+      "line": 12,
+      "column": 0,
+      "fn": "NotificationRow",
+      "reason": "Ref values (the `current` property) may not be accessed during render.",
+      "detail": "Cannot access ref value during render"
+    },
+    {
+      "file": "hooks/use-shop-reset-countdown.ts",
+      "line": 30,
+      "column": 0,
+      "fn": "useShopResetCountdown",
+      "reason": "Unsupported syntax",
+      "detail": "Writing to a variable defined outside a component or hook is not allowed"
+    }
+  ]
+}
