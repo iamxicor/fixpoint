@@ -1,0 +1,13 @@
+{
+  "name": "@fixpoint/harness",
+  "version": "0.1.0",
+  "description": "Fixpoint: self-improving performance harness for React Native (@fixpoint/harness)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": ["dist", "README.md"],
+  "scripts": { "build": "tsc -b", "test": "vitest run" },
+  "dependencies": { "@fixpoint/devtools": "workspace:*", "@fixpoint/analyzer": "workspace:*", "jiti": "^2.4.0", "pixelmatch": "^7.1.0", "pngjs": "^7.0.0" }, "devDependencies": { "@types/pngjs": "^6.0.5", "@types/pixelmatch": "^5.2.6" }
+}

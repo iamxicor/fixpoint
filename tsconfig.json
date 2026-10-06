@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/devtools" },
+    { "path": "packages/analyzer" },
+    { "path": "packages/harness" },
+    { "path": "packages/cli" },
+    { "path": "packages/mcp" }
+  ]
+}
