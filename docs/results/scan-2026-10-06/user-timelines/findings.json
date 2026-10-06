@@ -1,0 +1,4743 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T11:42:44.302Z",
+  "context": {
+    "route": "/user/timelines",
+    "scenario": "wait 1500ms → scroll down 600 → wait 600ms",
+    "platform": "ios-simulator",
+    "build": "dev"
+  },
+  "totals": {
+    "commits": 15,
+    "componentRenders": 3999,
+    "wastedRenders": 162,
+    "jsBusyMs": 507,
+    "traceMs": 5230,
+    "samples": 38772
+  },
+  "findings": [
+    {
+      "id": "render-fanout:forwardref-navigationcontainerinner:6b6e5d9f",
+      "kind": "render-fanout",
+      "severity": "high",
+      "score": 337.94,
+      "metric": {
+        "name": "componentsPerCommit",
+        "value": 1969,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Components ⚛ entries whose render window falls inside one Scheduler Render phase; maximum over commits rooted at this component",
+        "secondary": [
+          {
+            "name": "commits",
+            "value": 2,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "avgComponentsPerCommit",
+            "value": 1174,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "renderMsTotal",
+            "value": 180.47,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createNode",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 42.26,
+            "samples": 286,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 6.61,
+            "samples": 55,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 6.07,
+            "samples": 43,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 2.4,
+            "samples": 19,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 2.15,
+            "samples": 17,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 1.76,
+            "samples": 14,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "View",
+            "renders": 539,
+            "selfMs": 260.5,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 151,
+            "changedProps": {}
+          },
+          {
+            "name": "ForwardRef",
+            "renders": 487,
+            "selfMs": 21.01,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 91,
+            "changedProps": {}
+          },
+          {
+            "name": "Box",
+            "renders": 174,
+            "selfMs": 4.9,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 22,
+            "changedProps": {}
+          },
+          {
+            "name": "HStack",
+            "renders": 101,
+            "selfMs": 4.93,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 26,
+            "changedProps": {}
+          },
+          {
+            "name": "CssInterop.View",
+            "renders": 86,
+            "selfMs": 5.99,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 52,
+            "changedProps": {}
+          },
+          {
+            "name": "Image",
+            "renders": 86,
+            "selfMs": 2.21,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "Text",
+            "renders": 84,
+            "selfMs": 1.89,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "ExpoImage",
+            "renders": 84,
+            "selfMs": 1.25,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "TouchableOpacity",
+            "renders": 63,
+            "selfMs": 2.27,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 6,
+            "changedProps": {}
+          },
+          {
+            "name": "ImageWithSource",
+            "renders": 42,
+            "selfMs": 0.81,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "VirtualizedListCellContextProvider",
+            "renders": 41,
+            "selfMs": 1.05,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 30,
+            "changedProps": {}
+          },
+          {
+            "name": "CellRenderer",
+            "renders": 34,
+            "selfMs": 3.4,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "triggers": {
+            "BaseNavigationContainer updateSyncExternalStore()": 2
+          }
+        }
+      },
+      "location": {
+        "file": "melements/atoms/Screen/index.tsx",
+        "line": 381,
+        "column": 0,
+        "symbol": "Screen"
+      },
+      "suggestedFixes": [
+        "move-state-down"
+      ],
+      "summary": "ForwardRef(NavigationContainerInner) (first app component: Screen) is the root of 2 commits that rendered up to 1969 components each (average 1174). The most common trigger was BaseNavigationContainer updateSyncExternalStore(). 75 of those renders were list rows. Every component in the fan-out re-ran its render function; the deterministic count is what a fix must reduce."
+    },
+    {
+      "id": "render-fanout:homescreen:550db40e",
+      "kind": "render-fanout",
+      "severity": "high",
+      "score": 333.99,
+      "metric": {
+        "name": "componentsPerCommit",
+        "value": 791,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Components ⚛ entries whose render window falls inside one Scheduler Render phase; maximum over commits rooted at this component",
+        "secondary": [
+          {
+            "name": "commits",
+            "value": 2,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "avgComponentsPerCommit",
+            "value": 536,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "renderMsTotal",
+            "value": 66.9,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createTask",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 13.26,
+            "samples": 88,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 2.28,
+            "samples": 17,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 0.91,
+            "samples": 7,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "performUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14129,
+            "column": 4,
+            "selfMs": 0.86,
+            "samples": 7,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73015,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "diffProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+            "line": 227,
+            "column": 0,
+            "selfMs": 0.77,
+            "samples": 7,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 18396,
+              "column": 2
+            }
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 0.76,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "View",
+            "renders": 277,
+            "selfMs": 22.46,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 271,
+            "changedProps": {}
+          },
+          {
+            "name": "ForwardRef",
+            "renders": 153,
+            "selfMs": 5.68,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 143,
+            "changedProps": {}
+          },
+          {
+            "name": "CssInterop.View",
+            "renders": 98,
+            "selfMs": 4.74,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 96,
+            "changedProps": {}
+          },
+          {
+            "name": "Box",
+            "renders": 56,
+            "selfMs": 1.4,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 54,
+            "changedProps": {}
+          },
+          {
+            "name": "VirtualizedListCellContextProvider",
+            "renders": 46,
+            "selfMs": 3.58,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 46,
+            "changedProps": {}
+          },
+          {
+            "name": "HStack",
+            "renders": 44,
+            "selfMs": 1.94,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 42,
+            "changedProps": {}
+          },
+          {
+            "name": "CellRenderer",
+            "renders": 39,
+            "selfMs": 3.78,
+            "wasted": 23,
+            "deepEqualRenders": 23,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 23,
+              "updatedAt": 23,
+              "lastViewedAt": 23
+            }
+          },
+          {
+            "name": "AnimatedComponent(View)",
+            "renders": 32,
+            "selfMs": 3.73,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 32,
+            "changedProps": {}
+          },
+          {
+            "name": "Wrap",
+            "renders": 30,
+            "selfMs": 0.49,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 30,
+            "changedProps": {}
+          },
+          {
+            "name": "Modal",
+            "renders": 16,
+            "selfMs": 0.15,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 16,
+            "changedProps": {}
+          },
+          {
+            "name": "HomeEntryCell",
+            "renders": 15,
+            "selfMs": 0.59,
+            "wasted": 15,
+            "deepEqualRenders": 15,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 15,
+              "updatedAt": 15,
+              "lastViewedAt": 15
+            }
+          },
+          {
+            "name": "DraggableEntry",
+            "renders": 15,
+            "selfMs": 1.22,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 15,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "triggers": {
+            "HomeScreen updateSyncExternalStore()": 1,
+            "HomeScreen setState()": 1
+          }
+        }
+      },
+      "location": {
+        "file": "app/(authenticated)/(tabs)/timelines/index.tsx",
+        "line": 127,
+        "column": 0,
+        "symbol": "HomeScreen"
+      },
+      "suggestedFixes": [
+        "move-state-down"
+      ],
+      "summary": "HomeScreen is the root of 2 commits that rendered up to 791 components each (average 536). The most common trigger was HomeScreen updateSyncExternalStore(). 85 of those renders were list rows. Every component in the fan-out re-ran its render function; the deterministic count is what a fix must reduce."
+    },
+    {
+      "id": "render-fanout:virtualizedlist:75b574de",
+      "kind": "render-fanout",
+      "severity": "high",
+      "score": 332.39,
+      "metric": {
+        "name": "componentsPerCommit",
+        "value": 547,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Components ⚛ entries whose render window falls inside one Scheduler Render phase; maximum over commits rooted at this component",
+        "secondary": [
+          {
+            "name": "commits",
+            "value": 1,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "avgComponentsPerCommit",
+            "value": 547,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "renderMsTotal",
+            "value": 38.75,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createNode",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 13.84,
+            "samples": 89,
+            "generated": {}
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 1.13,
+            "samples": 8,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.75,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 0.73,
+            "samples": 3,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "renderWithHooks",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 5607,
+            "column": 4,
+            "selfMs": 0.7,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 69201,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "(anonymous)",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react/cjs/react.development.js",
+            "line": 1003,
+            "column": 5,
+            "selfMs": 0.69,
+            "samples": 4,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 7372,
+              "column": 28
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "View",
+            "renders": 142,
+            "selfMs": 38.76,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "ForwardRef",
+            "renders": 140,
+            "selfMs": 5.31,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "Box",
+            "renders": 47,
+            "selfMs": 1.3,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "HStack",
+            "renders": 35,
+            "selfMs": 1.5,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "Image",
+            "renders": 27,
+            "selfMs": 0.72,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "ExpoImage",
+            "renders": 26,
+            "selfMs": 1.33,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "Text",
+            "renders": 16,
+            "selfMs": 0.19,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "TouchableOpacity",
+            "renders": 15,
+            "selfMs": 0.54,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "ImageWithSource",
+            "renders": 13,
+            "selfMs": 0.26,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "CssInterop.View",
+            "renders": 10,
+            "selfMs": 0.5,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "Avatar",
+            "renders": 8,
+            "selfMs": 0.32,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "VirtualizedListCellContextProvider",
+            "renders": 6,
+            "selfMs": 0.28,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 1,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 4,
+            "atMs": 501.28,
+            "renderMs": 38.75,
+            "commitMs": 10.29,
+            "components": 547,
+            "root": "VirtualizedList",
+            "trigger": "ProfileShopMenuOption setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "triggers": {
+            "ProfileShopMenuOption setState()": 1
+          }
+        }
+      },
+      "location": {
+        "file": "melements-components/User/Profile/ProfileShopMenuOption/index.tsx",
+        "line": 59,
+        "column": 0,
+        "symbol": "ProfileShopMenuOption"
+      },
+      "suggestedFixes": [
+        "move-state-down"
+      ],
+      "summary": "VirtualizedList (first app component: ProfileShopMenuOption) is the root of 1 commit that rendered up to 547 components each (average 547). The most common trigger was ProfileShopMenuOption setState(). 6 of those renders were list rows. Every component in the fan-out re-ran its render function; the deterministic count is what a fix must reduce."
+    },
+    {
+      "id": "hot-component:screenstack:eeec1a92",
+      "kind": "hot-component",
+      "severity": "high",
+      "score": 320.57,
+      "metric": {
+        "name": "selfMsPerRender",
+        "value": 37.67,
+        "unit": "ms",
+        "deterministic": false,
+        "method": "render span minus nested component spans, averaged over renders in the scenario",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 3,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 113.01,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsP50",
+            "value": 3.78,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsMax",
+            "value": 109.15,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createNode",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 72.22,
+            "samples": 489,
+            "generated": {}
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 11.25,
+            "samples": 81,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 6.61,
+            "samples": 55,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 3.62,
+            "samples": 30,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 3.27,
+            "samples": 25,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          },
+          {
+            "symbol": "buildStyle",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/composeRestyleFunctions.js",
+            "line": 30,
+            "column": 4,
+            "selfMs": 2.48,
+            "samples": 16,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202261,
+              "column": 21
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 1.96,
+            "samples": 16,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "performUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14129,
+            "column": 4,
+            "selfMs": 1.93,
+            "samples": 13,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73015,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "ScreenStack",
+            "renders": 3,
+            "selfMs": 113.01,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ]
+      },
+      "location": {
+        "file": null,
+        "line": null,
+        "column": null,
+        "symbol": "ScreenStack"
+      },
+      "suggestedFixes": [
+        "hoist-literals",
+        "remove-compiler-bailout"
+      ],
+      "summary": "ScreenStack spent 113.01 ms of self time across 3 renders (average 37.67 ms, worst 109.15 ms). The hottest frame inside its renders was createNode. The render count is deterministic; the time is reported with a confidence interval only after an A/B run."
+    },
+    {
+      "id": "wasted-render:cellrenderer:d8ed9d93",
+      "kind": "wasted-render",
+      "severity": "medium",
+      "score": 218.8,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 23,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 78,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 23,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 7.86,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createTask",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 9.21,
+            "samples": 65,
+            "generated": {}
+          },
+          {
+            "symbol": "renderWithHooks",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 5607,
+            "column": 4,
+            "selfMs": 0.68,
+            "samples": 3,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 69201,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 0.55,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "get",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native-reanimated/src/common/index.ts",
+            "line": 2,
+            "column": 0,
+            "selfMs": 0.49,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 56625,
+              "column": 13
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.48,
+            "samples": 4,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "CellRenderer",
+            "renders": 78,
+            "selfMs": 7.86,
+            "wasted": 23,
+            "deepEqualRenders": 23,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 23,
+              "updatedAt": 23,
+              "lastViewedAt": 23
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 23,
+            "updatedAt": 23,
+            "lastViewedAt": 23
+          },
+          "owner": "TimelineCard",
+          "owners": {
+            "TouchableOpacity": 1,
+            "TimelineGridCard": 7,
+            "Box": 2,
+            "TimelineCard": 13
+          }
+        }
+      },
+      "location": {
+        "file": "melements/organisms/TimelineCard/index.tsx",
+        "line": 70,
+        "column": 0,
+        "symbol": "CellRenderer via TimelineCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals",
+        "stable-row-props"
+      ],
+      "summary": "CellRenderer rendered 78 times; 23 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (23×), updatedAt (23×), lastViewedAt (23×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:homeentrycard:e119fac8",
+      "kind": "wasted-render",
+      "severity": "medium",
+      "score": 217.04,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 15,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0.32,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "arrayIteratorPrototypeNext",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 0.74,
+            "samples": 6,
+            "generated": {}
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 0.28,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 0.27,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "bubbleProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9890,
+            "column": 4,
+            "selfMs": 0.18,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71141,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.14,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "HomeEntryCard",
+            "renders": 15,
+            "selfMs": 0.32,
+            "wasted": 15,
+            "deepEqualRenders": 15,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 15,
+              "updatedAt": 15,
+              "lastViewedAt": 15
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 15,
+            "updatedAt": 15,
+            "lastViewedAt": 15
+          },
+          "owner": "HomeEntryCard",
+          "owners": {
+            "HomeEntryCard": 15
+          }
+        }
+      },
+      "location": {
+        "file": "app/(authenticated)/(tabs)/timelines/index.tsx",
+        "line": 1093,
+        "column": 0,
+        "symbol": "HomeEntryCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "HomeEntryCard rendered 15 times; 15 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (15×), updatedAt (15×), lastViewedAt (15×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:homeentrycell:a48bc6f6",
+      "kind": "wasted-render",
+      "severity": "medium",
+      "score": 217.04,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 15,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0.59,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "arrayIteratorPrototypeNext",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 4.39,
+            "samples": 30,
+            "generated": {}
+          },
+          {
+            "symbol": "get",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native-reanimated/src/common/index.ts",
+            "line": 2,
+            "column": 0,
+            "selfMs": 0.49,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 56625,
+              "column": 13
+            }
+          },
+          {
+            "symbol": "DraggableEntry",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/components/timeline-grouping/DraggableEntry.tsx",
+            "line": 124,
+            "column": 0,
+            "selfMs": 0.4,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 976056,
+              "column": 2
+            }
+          },
+          {
+            "symbol": "useAnimatedGesture",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native-gesture-handler/src/handlers/gestures/GestureDetector/useAnimatedGesture.ts",
+            "line": 88,
+            "column": 0,
+            "selfMs": 0.35,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 279162,
+              "column": 2
+            }
+          },
+          {
+            "symbol": "stopProfilerTimerIfRunningAndRecordDuration",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3443,
+            "column": 4,
+            "selfMs": 0.29,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68132,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "HomeEntryCell",
+            "renders": 15,
+            "selfMs": 0.59,
+            "wasted": 15,
+            "deepEqualRenders": 15,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 15,
+              "updatedAt": 15,
+              "lastViewedAt": 15
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 15,
+            "updatedAt": 15,
+            "lastViewedAt": 15
+          },
+          "owner": "HomeEntryCell",
+          "owners": {
+            "HomeEntryCell": 15
+          }
+        }
+      },
+      "location": {
+        "file": "app/(authenticated)/(tabs)/timelines/index.tsx",
+        "line": 1149,
+        "column": 0,
+        "symbol": "HomeEntryCell"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "HomeEntryCell rendered 15 times; 15 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (15×), updatedAt (15×), lastViewedAt (15×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:timelinecard:e7c47428",
+      "kind": "wasted-render",
+      "severity": "medium",
+      "score": 217.04,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 15,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 30,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 8.11,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "run",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 0.34,
+            "samples": 2,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.34,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "attemptEarlyBailoutIfNoScheduledUpdate",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9071,
+            "column": 4,
+            "selfMs": 0.2,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 70849,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "getLastOfPath",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/i18next/dist/esm/i18next.js",
+            "line": 24,
+            "column": 6,
+            "selfMs": 0.19,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 435024,
+              "column": 22
+            }
+          },
+          {
+            "symbol": "resolveDispatcher",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react/cjs/react.development.js",
+            "line": 514,
+            "column": 4,
+            "selfMs": 0.18,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 7039,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "TimelineCard",
+            "renders": 30,
+            "selfMs": 8.11,
+            "wasted": 15,
+            "deepEqualRenders": 15,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 15,
+              "updatedAt": 15,
+              "lastViewedAt": 15
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 15,
+            "updatedAt": 15,
+            "lastViewedAt": 15
+          },
+          "owner": "TimelineCard",
+          "owners": {
+            "TimelineCard": 15
+          }
+        }
+      },
+      "location": {
+        "file": "melements/organisms/TimelineCard/index.tsx",
+        "line": 70,
+        "column": 0,
+        "symbol": "TimelineCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "TimelineCard rendered 30 times; 15 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (15×), updatedAt (15×), lastViewedAt (15×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:timelinegridcard:7c43d80d",
+      "kind": "wasted-render",
+      "severity": "medium",
+      "score": 217.04,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 15,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 15,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "arrayIteratorPrototypeNext",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 0.6,
+            "samples": 5,
+            "generated": {}
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 0.28,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 0.27,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "bubbleProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9890,
+            "column": 4,
+            "selfMs": 0.18,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71141,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.14,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "TimelineGridCard",
+            "renders": 15,
+            "selfMs": 0,
+            "wasted": 15,
+            "deepEqualRenders": 15,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 15,
+              "updatedAt": 15,
+              "lastViewedAt": 15
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 15,
+            "updatedAt": 15,
+            "lastViewedAt": 15
+          },
+          "owner": "TimelineGridCard",
+          "owners": {
+            "TimelineGridCard": 15
+          }
+        }
+      },
+      "location": {
+        "file": "melements/organisms/TimelineGridCard/index.tsx",
+        "line": 64,
+        "column": 0,
+        "symbol": "TimelineGridCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "TimelineGridCard rendered 15 times; 15 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (15×), updatedAt (15×), lastViewedAt (15×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "compiler-bailout:components-timeline-grouping-draggableentry-tsx-:9d7c3e03",
+      "kind": "compiler-bailout",
+      "severity": "medium",
+      "score": 215.41,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [
+          {
+            "name": "DraggableEntry",
+            "renders": 0,
+            "selfMs": 0
+          }
+        ],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`scale` cannot be modified",
+          "relatedToRenderFinding": true
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/DraggableEntry.tsx",
+        "line": 141,
+        "column": 7,
+        "symbol": "DraggableEntry"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped DraggableEntry in components/timeline-grouping/DraggableEntry.tsx:141: `scale` cannot be modified. This component also appears in a render finding in this scan, so it re-renders without any memoisation."
+    },
+    {
+      "id": "hot-component:view:8f584a8e",
+      "kind": "hot-component",
+      "severity": "low",
+      "score": 125.09,
+      "metric": {
+        "name": "selfMsPerRender",
+        "value": 0.34,
+        "unit": "ms",
+        "deterministic": false,
+        "method": "render span minus nested component spans, averaged over renders in the scenario",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 958,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 321.72,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsP50",
+            "value": 0.03,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsMax",
+            "value": 96.11,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createNode",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 78.08,
+            "samples": 552,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 8.64,
+            "samples": 82,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 7.06,
+            "samples": 51,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 3.74,
+            "samples": 27,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "wrapJSX",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native-css-interop/dist/runtime/wrap-jsx.js",
+            "line": 6,
+            "column": 9,
+            "selfMs": 3.57,
+            "samples": 25,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 9667,
+              "column": 11
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 3.54,
+            "samples": 31,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 3.54,
+            "samples": 30,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          },
+          {
+            "symbol": "metroRequire",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@expo/cli/build/metro-require/require.js",
+            "line": 52,
+            "column": 0,
+            "selfMs": 2.87,
+            "samples": 19,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 57,
+              "column": 2
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "View",
+            "renders": 958,
+            "selfMs": 321.72,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 422,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 4,
+            "atMs": 501.28,
+            "renderMs": 38.75,
+            "commitMs": 10.29,
+            "components": 547,
+            "root": "VirtualizedList",
+            "trigger": "ProfileShopMenuOption setState()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ]
+      },
+      "location": {
+        "file": null,
+        "line": null,
+        "column": null,
+        "symbol": "View"
+      },
+      "suggestedFixes": [
+        "hoist-literals",
+        "remove-compiler-bailout"
+      ],
+      "summary": "View spent 321.72 ms of self time across 958 renders (average 0.34 ms, worst 96.11 ms). The hottest frame inside its renders was createNode. The render count is deterministic; the time is reported with a confidence interval only after an A/B run."
+    },
+    {
+      "id": "hot-component:scrollview:75eff910",
+      "kind": "hot-component",
+      "severity": "low",
+      "score": 122.61,
+      "metric": {
+        "name": "selfMsPerRender",
+        "value": 7.56,
+        "unit": "ms",
+        "deterministic": false,
+        "method": "render span minus nested component spans, averaged over renders in the scenario",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 24,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 181.36,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsP50",
+            "value": 0.09,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsMax",
+            "value": 84.05,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 163.17,
+            "samples": 1098,
+            "generated": {}
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 14.28,
+            "samples": 102,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 7.18,
+            "samples": 52,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 6.22,
+            "samples": 46,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 5.32,
+            "samples": 48,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "buildStyle",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/composeRestyleFunctions.js",
+            "line": 30,
+            "column": 4,
+            "selfMs": 5.16,
+            "samples": 40,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202261,
+              "column": 21
+            }
+          },
+          {
+            "symbol": "renderWithHooks",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 5607,
+            "column": 4,
+            "selfMs": 4.64,
+            "samples": 30,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 69201,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 4.02,
+            "samples": 24,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "ScrollView",
+            "renders": 24,
+            "selfMs": 181.36,
+            "wasted": 10,
+            "deepEqualRenders": 10,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 10,
+            "changedProps": {
+              "refreshControl": 8,
+              "ListHeaderComponent": 10,
+              "ListFooterComponent": 8,
+              "createdAt": 4,
+              "updatedAt": 4,
+              "lastViewedAt": 4,
+              "ListEmptyComponent": 2
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 4,
+            "atMs": 501.28,
+            "renderMs": 38.75,
+            "commitMs": 10.29,
+            "components": 547,
+            "root": "VirtualizedList",
+            "trigger": "ProfileShopMenuOption setState()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ]
+      },
+      "location": {
+        "file": "melements/atoms/ScrollView/index.tsx",
+        "line": 23,
+        "column": 0,
+        "symbol": "ScrollView"
+      },
+      "suggestedFixes": [
+        "list-config",
+        "stable-row-props",
+        "hoist-literals",
+        "remove-compiler-bailout"
+      ],
+      "summary": "ScrollView spent 181.36 ms of self time across 24 renders (average 7.56 ms, worst 84.05 ms). The hottest frame inside its renders was appendChild. The render count is deterministic; the time is reported with a confidence interval only after an A/B run."
+    },
+    {
+      "id": "hot-component:screen:112f6d0a",
+      "kind": "hot-component",
+      "severity": "low",
+      "score": 120.03,
+      "metric": {
+        "name": "selfMsPerRender",
+        "value": 5.54,
+        "unit": "ms",
+        "deterministic": false,
+        "method": "render span minus nested component spans, averaged over renders in the scenario",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 18,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 99.74,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsP50",
+            "value": 0.06,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsMax",
+            "value": 98.79,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 138.8,
+            "samples": 928,
+            "generated": {}
+          },
+          {
+            "symbol": "completeWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9950,
+            "column": 4,
+            "selfMs": 17.23,
+            "samples": 123,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71161,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 12.47,
+            "samples": 107,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 6.98,
+            "samples": 53,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 5.59,
+            "samples": 43,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 5.33,
+            "samples": 41,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "buildStyle",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/composeRestyleFunctions.js",
+            "line": 30,
+            "column": 4,
+            "selfMs": 4.64,
+            "samples": 31,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202261,
+              "column": 21
+            }
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 3.87,
+            "samples": 22,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "Screen",
+            "renders": 18,
+            "selfMs": 99.74,
+            "wasted": 4,
+            "deepEqualRenders": 4,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 5,
+            "changedProps": {
+              "nativeEvent": 5,
+              "aria-hidden": 1
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 3,
+            "atMs": 489.9,
+            "renderMs": 6.35,
+            "commitMs": 0.74,
+            "components": 26,
+            "root": "SceneView",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ]
+      },
+      "location": {
+        "file": "melements/atoms/Screen/index.tsx",
+        "line": 381,
+        "column": 0,
+        "symbol": "Screen"
+      },
+      "suggestedFixes": [
+        "hoist-literals",
+        "remove-compiler-bailout"
+      ],
+      "summary": "Screen spent 99.74 ms of self time across 18 renders (average 5.54 ms, worst 98.79 ms). The hottest frame inside its renders was appendChild. The render count is deterministic; the time is reported with a confidence interval only after an A/B run."
+    },
+    {
+      "id": "render-fanout:sceneview:19c6f274",
+      "kind": "render-fanout",
+      "severity": "low",
+      "score": 119.31,
+      "metric": {
+        "name": "componentsPerCommit",
+        "value": 26,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Components ⚛ entries whose render window falls inside one Scheduler Render phase; maximum over commits rooted at this component",
+        "secondary": [
+          {
+            "name": "commits",
+            "value": 1,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "avgComponentsPerCommit",
+            "value": 26,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "renderMsTotal",
+            "value": 6.35,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "functionPrototypeBind",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 0.97,
+            "samples": 7,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 0.57,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.53,
+            "samples": 4,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createFiber",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 137,
+            "column": 4,
+            "selfMs": 0.27,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 66240,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "AnimatedEvent",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Animated/AnimatedEvent.js",
+            "line": 150,
+            "column": 12,
+            "selfMs": 0.23,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 21760,
+              "column": 15
+            }
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 0.22,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "SceneView",
+            "renders": 2,
+            "selfMs": 0.37,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {}
+          },
+          {
+            "name": "NavigationProvider",
+            "renders": 2,
+            "selfMs": 0.11,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "ForwardRef(ScreenStackItem)",
+            "renders": 2,
+            "selfMs": 0.23,
+            "wasted": 2,
+            "deepEqualRenders": 2,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "nativeEvent": 2,
+              "children": 2
+            }
+          },
+          {
+            "name": "Screen",
+            "renders": 2,
+            "selfMs": 0.06,
+            "wasted": 2,
+            "deepEqualRenders": 2,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "nativeEvent": 2
+            }
+          },
+          {
+            "name": "ForwardRef(InnerScreen)",
+            "renders": 2,
+            "selfMs": 0.16,
+            "wasted": 2,
+            "deepEqualRenders": 2,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "nativeEvent": 2
+            }
+          },
+          {
+            "name": "DelayedFreeze",
+            "renders": 2,
+            "selfMs": 0.05,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "Freeze",
+            "renders": 2,
+            "selfMs": 0.08,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "Suspender",
+            "renders": 2,
+            "selfMs": 0.04,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "Animated(Anonymous)",
+            "renders": 2,
+            "selfMs": 1.72,
+            "wasted": 2,
+            "deepEqualRenders": 2,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "nativeEvent": 2
+            }
+          },
+          {
+            "name": "DebugContainer",
+            "renders": 2,
+            "selfMs": 0.04,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "ScreenContentWrapper",
+            "renders": 2,
+            "selfMs": 0.05,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          },
+          {
+            "name": "SafeAreaView",
+            "renders": 2,
+            "selfMs": 0.64,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 2,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 3,
+            "atMs": 489.9,
+            "renderMs": 6.35,
+            "commitMs": 0.74,
+            "components": 26,
+            "root": "SceneView",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "triggers": {
+            "HomeScreen setState()": 1
+          }
+        }
+      },
+      "location": {
+        "file": "melements/atoms/Screen/index.tsx",
+        "line": 381,
+        "column": 0,
+        "symbol": "Screen"
+      },
+      "suggestedFixes": [
+        "move-state-down"
+      ],
+      "summary": "SceneView (first app component: Screen) is the root of 1 commit that rendered up to 26 components each (average 26). The most common trigger was HomeScreen setState(). Every component in the fan-out re-ran its render function; the deterministic count is what a fix must reduce."
+    },
+    {
+      "id": "wasted-render:temp7:680f991d",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 116.76,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 14,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 28,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 14,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0.35,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createTask",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 0.67,
+            "samples": 5,
+            "generated": {}
+          },
+          {
+            "symbol": "renderWithHooks",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 5607,
+            "column": 4,
+            "selfMs": 0.22,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 69201,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "runWithFiberInDEV",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 691,
+            "column": 4,
+            "selfMs": 0.14,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 66665,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "diffProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/ReactNative/ReactFabricPublicInstance/ReactNativeAttributePayload.js",
+            "line": 227,
+            "column": 0,
+            "selfMs": 0.12,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 18396,
+              "column": 2
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 0.11,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "_temp7",
+            "renders": 28,
+            "selfMs": 0.35,
+            "wasted": 14,
+            "deepEqualRenders": 14,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 14,
+              "updatedAt": 14,
+              "lastViewedAt": 14
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 14,
+            "updatedAt": 14,
+            "lastViewedAt": 14
+          },
+          "owner": "TimelineCard",
+          "owners": {
+            "TimelineCard": 13,
+            "Box": 1
+          }
+        }
+      },
+      "location": {
+        "file": "melements/organisms/TimelineCard/index.tsx",
+        "line": 70,
+        "column": 0,
+        "symbol": "_temp7 via TimelineCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "_temp7 rendered 28 times; 14 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (14×), updatedAt (14×), lastViewedAt (14×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:forwardref-remappropscomponent:d8f7017f",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 115.41,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 10,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 20,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 10,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0.46,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 48.06,
+            "samples": 312,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 5.32,
+            "samples": 48,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 3.11,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 2.39,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 2.17,
+            "samples": 14,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "ForwardRef(RemapPropsComponent)",
+            "renders": 20,
+            "selfMs": 0.46,
+            "wasted": 10,
+            "deepEqualRenders": 10,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "refreshControl": 8,
+              "ListHeaderComponent": 10,
+              "ListFooterComponent": 8,
+              "createdAt": 4,
+              "updatedAt": 4,
+              "lastViewedAt": 4,
+              "ListEmptyComponent": 2
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "refreshControl": 8,
+            "ListHeaderComponent": 10,
+            "ListFooterComponent": 8,
+            "createdAt": 4,
+            "updatedAt": 4,
+            "lastViewedAt": 4,
+            "ListEmptyComponent": 2
+          },
+          "owner": "TimelineDragProvider",
+          "owners": {
+            "TimelineDragProvider": 8,
+            "Screen": 2
+          }
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/drag-context.tsx",
+        "line": 261,
+        "column": 0,
+        "symbol": "ForwardRef(RemapPropsComponent) via TimelineDragProvider"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "ForwardRef(RemapPropsComponent) rendered 20 times; 10 of those renders received props that were deeply equal or differed only by a new function identity (ListHeaderComponent (10×), refreshControl (8×), ListFooterComponent (8×), createdAt (4×), updatedAt (4×), lastViewedAt (4×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:scrollview:bea19bd0",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 115.41,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 10,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 24,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 10,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 10,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 181.36,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 48.32,
+            "samples": 314,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 5.32,
+            "samples": 48,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 3.11,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 2.39,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 2.34,
+            "samples": 16,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "ScrollView",
+            "renders": 24,
+            "selfMs": 181.36,
+            "wasted": 10,
+            "deepEqualRenders": 10,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 10,
+            "changedProps": {
+              "refreshControl": 8,
+              "ListHeaderComponent": 10,
+              "ListFooterComponent": 8,
+              "createdAt": 4,
+              "updatedAt": 4,
+              "lastViewedAt": 4,
+              "ListEmptyComponent": 2
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "refreshControl": 8,
+            "ListHeaderComponent": 10,
+            "ListFooterComponent": 8,
+            "createdAt": 4,
+            "updatedAt": 4,
+            "lastViewedAt": 4,
+            "ListEmptyComponent": 2
+          },
+          "owner": "ScrollView",
+          "owners": {
+            "ScrollView": 10
+          }
+        }
+      },
+      "location": {
+        "file": "melements/atoms/ScrollView/index.tsx",
+        "line": 23,
+        "column": 0,
+        "symbol": "ScrollView"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "ScrollView rendered 24 times; 10 of those renders received props that were deeply equal or differed only by a new function identity (ListHeaderComponent (10×), refreshControl (8×), ListFooterComponent (8×), createdAt (4×), updatedAt (4×), lastViewedAt (4×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:temp20:94cbe5ac",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 114.03,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 7,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 7,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 7,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "updateForwardRef",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 7749,
+            "column": 4,
+            "selfMs": 0.19,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 70365,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "performUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14129,
+            "column": 4,
+            "selfMs": 0.13,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73015,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "filterRestyleProps",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/@shopify/restyle/dist/hooks/useRestyle.js",
+            "line": 8,
+            "column": 17,
+            "selfMs": 0.13,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 202369,
+              "column": 27
+            }
+          },
+          {
+            "symbol": "stopProfilerTimerIfRunningAndRecordIncompleteDuration",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3451,
+            "column": 4,
+            "selfMs": 0.06,
+            "samples": 1,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68140,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "_temp20",
+            "renders": 7,
+            "selfMs": 0,
+            "wasted": 7,
+            "deepEqualRenders": 7,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "createdAt": 7,
+              "updatedAt": 7,
+              "lastViewedAt": 7
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "createdAt": 7,
+            "updatedAt": 7,
+            "lastViewedAt": 7
+          },
+          "owner": "TimelineGridCard",
+          "owners": {
+            "TimelineGridCard": 7
+          }
+        }
+      },
+      "location": {
+        "file": "melements/organisms/TimelineGridCard/index.tsx",
+        "line": 64,
+        "column": 0,
+        "symbol": "_temp20 via TimelineGridCard"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "_temp20 rendered 7 times; 7 of those renders received props that were deeply equal or differed only by a new function identity (createdAt (7×), updatedAt (7×), lastViewedAt (7×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:cssinterop-scrollview:cdf2a4a5",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 112.78,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 5,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 12,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 2.81,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 24.03,
+            "samples": 156,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 2.66,
+            "samples": 24,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 1.56,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 1.2,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 1.17,
+            "samples": 8,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "CssInterop.ScrollView",
+            "renders": 12,
+            "selfMs": 2.81,
+            "wasted": 5,
+            "deepEqualRenders": 5,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 5,
+            "changedProps": {
+              "refreshControl": 4,
+              "ListHeaderComponent": 5,
+              "ListFooterComponent": 4,
+              "createdAt": 2,
+              "updatedAt": 2,
+              "lastViewedAt": 2,
+              "ListEmptyComponent": 1
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "refreshControl": 4,
+            "ListHeaderComponent": 5,
+            "ListFooterComponent": 4,
+            "createdAt": 2,
+            "updatedAt": 2,
+            "lastViewedAt": 2,
+            "ListEmptyComponent": 1
+          },
+          "owner": "TimelineDragProvider",
+          "owners": {
+            "TimelineDragProvider": 4,
+            "Screen": 1
+          }
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/drag-context.tsx",
+        "line": 261,
+        "column": 0,
+        "symbol": "CssInterop.ScrollView via TimelineDragProvider"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "CssInterop.ScrollView rendered 12 times; 5 of those renders received props that were deeply equal or differed only by a new function identity (ListHeaderComponent (5×), refreshControl (4×), ListFooterComponent (4×), createdAt (2×), updatedAt (2×), lastViewedAt (2×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:flatlist:31c5ca7c",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 112.78,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 5,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 10,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 0.35,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 24.03,
+            "samples": 156,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 2.66,
+            "samples": 24,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 1.56,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 1.2,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 1.09,
+            "samples": 7,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "FlatList",
+            "renders": 10,
+            "selfMs": 0.35,
+            "wasted": 5,
+            "deepEqualRenders": 5,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "refreshControl": 4,
+              "ListHeaderComponent": 5,
+              "ListFooterComponent": 4,
+              "createdAt": 2,
+              "updatedAt": 2,
+              "lastViewedAt": 2,
+              "ListEmptyComponent": 1
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "refreshControl": 4,
+            "ListHeaderComponent": 5,
+            "ListFooterComponent": 4,
+            "createdAt": 2,
+            "updatedAt": 2,
+            "lastViewedAt": 2,
+            "ListEmptyComponent": 1
+          },
+          "owner": "TimelineDragProvider",
+          "owners": {
+            "TimelineDragProvider": 4,
+            "Screen": 1
+          }
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/drag-context.tsx",
+        "line": 261,
+        "column": 0,
+        "symbol": "FlatList via TimelineDragProvider"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "FlatList rendered 10 times; 5 of those renders received props that were deeply equal or differed only by a new function identity (ListHeaderComponent (5×), refreshControl (4×), ListFooterComponent (4×), createdAt (2×), updatedAt (2×), lastViewedAt (2×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:tabsscreen:edb3a047",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 112.78,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 5,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 2.92,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "createTask",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 8.28,
+            "samples": 53,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 2.06,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.72,
+            "samples": 6,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 0.63,
+            "samples": 4,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "bubbleProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9890,
+            "column": 4,
+            "selfMs": 0.51,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71141,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "TabsScreen",
+            "renders": 5,
+            "selfMs": 2.92,
+            "wasted": 5,
+            "deepEqualRenders": 5,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "normal": 5,
+              "selected": 5,
+              "focused": 5
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "normal": 5,
+            "selected": 5,
+            "focused": 5
+          },
+          "owner": "Screen",
+          "owners": {
+            "Screen": 5
+          }
+        }
+      },
+      "location": {
+        "file": "melements/atoms/Screen/index.tsx",
+        "line": 381,
+        "column": 0,
+        "symbol": "TabsScreen via Screen"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "TabsScreen rendered 5 times; 5 of those renders received props that were deeply equal or differed only by a new function identity (normal (5×), selected (5×), focused (5×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:virtualizedlist:a86abe73",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 112.78,
+      "metric": {
+        "name": "avoidableRenders",
+        "value": 5,
+        "unit": "count",
+        "deterministic": true,
+        "method": "changed-props renders whose diff contains only deeply equal values, same-type elements, or functions React flagged as referentially unequal closures",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 11,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "deepEqualRenders",
+            "value": 5,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "callbackOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "childrenOnlyRenders",
+            "value": 0,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 2.88,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "appendChild",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 24.18,
+            "samples": 157,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 2.66,
+            "samples": 24,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 1.56,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 1.2,
+            "samples": 9,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "createWorkInProgress",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 15380,
+            "column": 4,
+            "selfMs": 1.09,
+            "samples": 7,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73641,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "VirtualizedList",
+            "renders": 11,
+            "selfMs": 2.88,
+            "wasted": 5,
+            "deepEqualRenders": 5,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 0,
+            "changedProps": {
+              "refreshControl": 4,
+              "ListHeaderComponent": 5,
+              "ListFooterComponent": 4,
+              "createdAt": 2,
+              "updatedAt": 2,
+              "lastViewedAt": 2,
+              "ListEmptyComponent": 1
+            }
+          }
+        ],
+        "commits": [
+          {
+            "index": 1,
+            "atMs": 26.52,
+            "renderMs": 143.25,
+            "commitMs": 21.1,
+            "components": 1969,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 5,
+            "atMs": 564.45,
+            "renderMs": 47.14,
+            "commitMs": 4.77,
+            "components": 791,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen updateSyncExternalStore()",
+            "track": "Blocking"
+          },
+          {
+            "index": 9,
+            "atMs": 901.82,
+            "renderMs": 19.76,
+            "commitMs": 3.37,
+            "components": 281,
+            "root": "HomeScreen",
+            "trigger": "HomeScreen setState()",
+            "track": "Blocking"
+          }
+        ],
+        "extra": {
+          "changedProps": {
+            "refreshControl": 4,
+            "ListHeaderComponent": 5,
+            "ListFooterComponent": 4,
+            "createdAt": 2,
+            "updatedAt": 2,
+            "lastViewedAt": 2,
+            "ListEmptyComponent": 1
+          },
+          "owner": "TimelineDragProvider",
+          "owners": {
+            "TimelineDragProvider": 4,
+            "Screen": 1
+          }
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/drag-context.tsx",
+        "line": 261,
+        "column": 0,
+        "symbol": "VirtualizedList via TimelineDragProvider"
+      },
+      "suggestedFixes": [
+        "hoist-literals"
+      ],
+      "summary": "VirtualizedList rendered 11 times; 5 of those renders received props that were deeply equal or differed only by a new function identity (ListHeaderComponent (5×), refreshControl (4×), ListFooterComponent (4×), createdAt (2×), updatedAt (2×), lastViewedAt (2×)). Those renders can be removed by giving the parent stable props or letting the React Compiler memoise the owner."
+    },
+    {
+      "id": "wasted-render:basenavigationcontainer-cascading:7350191e",
+      "kind": "wasted-render",
+      "severity": "low",
+      "score": 109.77,
+      "metric": {
+        "name": "cascadingUpdates",
+        "value": 2,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Scheduler ⚛ \"Cascading Update\" measures attributed to this component"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [
+          {
+            "name": "BaseNavigationContainer",
+            "renders": 2,
+            "selfMs": 0
+          }
+        ],
+        "commits": [],
+        "extra": {
+          "methods": [
+            "updateSyncExternalStore()"
+          ]
+        }
+      },
+      "location": {
+        "file": null,
+        "line": null,
+        "column": null,
+        "symbol": "BaseNavigationContainer"
+      },
+      "suggestedFixes": [
+        "remove-redundant-effect",
+        "move-state-down"
+      ],
+      "summary": "BaseNavigationContainer scheduled 2 cascading updates: a state update inside an effect that ran right after a commit, forcing a second synchronous render pass. Deriving the value during render or moving the state removes the second commit."
+    },
+    {
+      "id": "hot-component:tabshost:646eded1",
+      "kind": "hot-component",
+      "severity": "low",
+      "score": 109.1,
+      "metric": {
+        "name": "selfMsPerRender",
+        "value": 7.13,
+        "unit": "ms",
+        "deterministic": false,
+        "method": "render span minus nested component spans, averaged over renders in the scenario",
+        "secondary": [
+          {
+            "name": "renders",
+            "value": 1,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "selfMsTotal",
+            "value": 7.13,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsP50",
+            "value": 7.13,
+            "unit": "ms",
+            "deterministic": false
+          },
+          {
+            "name": "selfMsMax",
+            "value": 7.13,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [
+          {
+            "symbol": "regExpPrototypeExec",
+            "file": null,
+            "line": null,
+            "column": null,
+            "selfMs": 7.51,
+            "samples": 48,
+            "generated": {}
+          },
+          {
+            "symbol": "propagateContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3174,
+            "column": 4,
+            "selfMs": 2.06,
+            "samples": 18,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67940,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "reconcileChildFibersImpl",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 4722,
+            "column": 6,
+            "selfMs": 0.63,
+            "samples": 4,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68718,
+              "column": 6
+            }
+          },
+          {
+            "symbol": "propagateParentContextChanges",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3239,
+            "column": 4,
+            "selfMs": 0.59,
+            "samples": 5,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 67986,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "bubbleProperties",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 9890,
+            "column": 4,
+            "selfMs": 0.51,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 71141,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "updateWorkInProgressHook",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 5810,
+            "column": 4,
+            "selfMs": 0.37,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 69313,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "completeUnitOfWork",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 14256,
+            "column": 4,
+            "selfMs": 0.32,
+            "samples": 2,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 73071,
+              "column": 4
+            }
+          },
+          {
+            "symbol": "stopProfilerTimerIfRunningAndRecordIncompleteDuration",
+            "file": "/Users/himanshukushwah/.cache/fixpoint/mobile/worktrees/main/node_modules/react-native/Libraries/Renderer/implementations/ReactFabric-dev.js",
+            "line": 3451,
+            "column": 4,
+            "selfMs": 0.32,
+            "samples": 3,
+            "generated": {
+              "url": "http://127.0.0.1:8091/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+              "line": 68140,
+              "column": 4
+            }
+          }
+        ],
+        "components": [
+          {
+            "name": "TabsHost",
+            "renders": 1,
+            "selfMs": 7.13,
+            "wasted": 0,
+            "deepEqualRenders": 0,
+            "callbackOnlyRenders": 0,
+            "childrenOnlyRenders": 1,
+            "changedProps": {}
+          }
+        ],
+        "commits": [
+          {
+            "index": 2,
+            "atMs": 235.33,
+            "renderMs": 37.22,
+            "commitMs": 5.67,
+            "components": 379,
+            "root": "ForwardRef(NavigationContainerInner)",
+            "trigger": "BaseNavigationContainer updateSyncExternalStore()",
+            "track": "Blocking"
+          }
+        ]
+      },
+      "location": {
+        "file": null,
+        "line": null,
+        "column": null,
+        "symbol": "TabsHost"
+      },
+      "suggestedFixes": [
+        "hoist-literals",
+        "remove-compiler-bailout"
+      ],
+      "summary": "TabsHost spent 7.13 ms of self time across 1 render (average 7.13 ms, worst 7.13 ms). The hottest frame inside its renders was regExpPrototypeExec. The render count is deterministic; the time is reported with a confidence interval only after an A/B run."
+    },
+    {
+      "id": "compiler-bailout:components-camera-collage-mode-tsx-206-collagepr:f040c517",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+          "detail": "Found React rule suppression",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/collage-mode.tsx",
+        "line": 206,
+        "column": 2,
+        "symbol": "CollagePreview"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped CollagePreview in components/camera/collage-mode.tsx:206: Found React rule suppression. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-camera-collage-mode-tsx-374-slotcontr:aba63a05",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`dragIndex` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/collage-mode.tsx",
+        "line": 374,
+        "column": 0,
+        "symbol": "SlotControls"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped SlotControls in components/camera/collage-mode.tsx:374: `dragIndex` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-camera-vision-camera-with-gallery-tsx:6c7f6f5a",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Cannot update ref during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/vision-camera-with-gallery.tsx",
+        "line": 302,
+        "column": 7,
+        "symbol": "VisionCameraWithGallery"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped VisionCameraWithGallery in components/camera/vision-camera-with-gallery.tsx:302: Cannot update ref during render. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-pages-timeline-legacy-timeline-redire:00faa750",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+          "detail": "Found React rule suppression",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/pages/timeline/legacy-timeline-redirect.tsx",
+        "line": 59,
+        "column": 7,
+        "symbol": "LegacyTimelineRedirect"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped LegacyTimelineRedirect in components/pages/timeline/legacy-timeline-redirect.tsx:59: Found React rule suppression. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tab-flatlist-tsx-51-tabflatlist:84624abe",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`isListGliding` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tab-flatlist.tsx",
+        "line": 51,
+        "column": 7,
+        "symbol": "TabFlatList"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabFlatList in components/tabs/tab-flatlist.tsx:51: `isListGliding` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tab-scrollview-tsx-54-tabscrollv:71b4b113",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`isListGliding` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tab-scrollview.tsx",
+        "line": 54,
+        "column": 7,
+        "symbol": "TabScrollView"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabScrollView in components/tabs/tab-scrollview.tsx:54: `isListGliding` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tabs-header-wrapper-tsx-12-tabsh:3cdf17fb",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Passing a ref to a function may read its value during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tabs-header-wrapper.tsx",
+        "line": 12,
+        "column": 7,
+        "symbol": "TabsHeaderWrapper"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabsHeaderWrapper in components/tabs/tabs-header-wrapper.tsx:12: Passing a ref to a function may read its value during render. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tabs-provider-tsx-77-tabsprovide:1f742a40",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Cannot access ref value during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tabs-provider.tsx",
+        "line": 77,
+        "column": 7,
+        "symbol": "TabsProvider"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabsProvider in components/tabs/tabs-provider.tsx:77: Cannot access ref value during render. Without compilation none of its inline values or callbacks are memoised."
+    }
+  ],
+  "notes": [
+    "The trace has no RunTask events (expected on Expo SDK 56 / React Native 0.85); long tasks and frame drops are derived from sampling-profiler busy runs."
+  ]
+}

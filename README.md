@@ -18,19 +18,60 @@ Three ideas carry it:
 2. **Run A/A before A/B.** The noise floor of base-against-base is the real acceptance threshold, never a hard-coded number.
 3. **Zero edits to the app.** Everything attaches from outside: Metro's inspector proxy, the simulator, the filesystem. Navigation goes through Expo Router's own API over the debugger socket.
 
-## 60-second quickstart
+## Status
 
-Requirements: macOS with Xcode and a booted iOS Simulator, Node 22+, an Expo app using the dev client (SDK 52+), React Native 0.81+ and React 19.2+, Metro running (`npx expo start --dev-client`) with the app open.
+Version 0.1.0, not yet on npm. What has run for real against a production Expo app is in [docs/RESULTS.md](docs/RESULTS.md): `init`, `verify`, the startup capture, the React Compiler pass and a 25-route scan. The A/A, A/B, draft-PR and video steps are implemented and tested against fixtures but have not produced results yet; the results page says so rather than pretending.
+
+## Install (from source)
+
+Requirements: macOS with Xcode and a booted iOS Simulator, Node 22+, pnpm, an Expo app using the dev client (SDK 52+) with React Native 0.81+ and React 19.2+, and the app's own dependencies installed.
 
 ```bash
-# in your app's directory
-npx fixpoint init        # detects scheme, bundle id, routes; writes fixpoint.config.mjs
-npx fixpoint verify      # connects, records two seconds, checks the React tracks
-npx fixpoint scan        # records every route, writes findings.json per route
-npx fixpoint findings    # ranked table
+git clone https://github.com/iamxicor/fixpoint.git
+cd fixpoint
+pnpm install && pnpm build
+alias fixpoint="node $PWD/packages/cli/dist/bin.js"   # or: pnpm link --global in packages/cli
 ```
 
-Then, with the Claude Code plugin (`claude --plugin-dir <fixpoint>/plugin`):
+## 60-second quickstart
+
+With Metro running in your app (`npx expo start --dev-client`) and the app open on the simulator:
+
+```bash
+cd ~/your-app
+fixpoint init            # detects scheme, bundle id, routes; writes fixpoint.config.mjs (import-free)
+fixpoint verify          # connects, records two seconds, checks the React tracks
+fixpoint scan            # cold-starts once for the startup capture, then records every route
+fixpoint findings        # ranked table per route; --json for findings.json
+```
+
+`init` writes one file next to your package.json and nothing else. Everything Fixpoint produces goes to `~/.cache/fixpoint/<app>/`.
+
+## Walkthrough: measuring a branch, then a fix
+
+```bash
+# 1. serve a clean ref from its own worktree (keeps your Metro untouched); leave it running
+fixpoint serve --ref origin/main --port 8091
+
+# 2. verify and scan against it
+fixpoint verify --metro http://127.0.0.1:8091
+fixpoint scan --metro http://127.0.0.1:8091
+fixpoint findings /notifications
+
+# 3. put one allow-listed fix on a branch (see docs/FIX-RECIPES.md), commit it, then calibrate and measure
+fixpoint aa --route /notifications --base origin/main
+fixpoint ab --route /notifications --base origin/main --candidate fixpoint/notifications-stable-row-props --video
+
+# 4. gates and the PR text
+fixpoint gates --dir <candidate checkout> --verdict ~/.cache/fixpoint/<app>/ab/<run>/verdict.json --out gates.json
+fixpoint pr-body --verdict …/verdict.json --findings ~/.cache/fixpoint/<app>/scan/notifications/findings.json \
+  --finding <id from findings.json> --recipe stable-row-props --gates gates.json --out body.md
+gh pr create --draft --base main --title "$(…)" --body-file body.md
+```
+
+Routes that need parameters, auth or a flow (onboarding, pickers, camera) are listed by `fixpoint routes` with a reason; put them in `exclude` or give them `params` in the config.
+
+With the Claude Code plugin (`claude --plugin-dir <fixpoint>/plugin`, run from your app's directory) the same loop is one command:
 
 ```
 /fixpoint:optimize-screen /notifications
@@ -131,7 +172,9 @@ The allow-list ([docs/FIX-RECIPES.md](docs/FIX-RECIPES.md)): remove a React Comp
 
 **What about Android / release builds / bare RN?** Out of scope for v1. See [docs/DECISIONS.md](docs/DECISIONS.md) for what was verified and why.
 
-**Which numbers in this README are real?** Only those that appear in `docs/results/*.json`; see [docs/RESULTS.md](docs/RESULTS.md).
+**Which numbers in this README are real?** None are quoted here; the ones in [docs/RESULTS.md](docs/RESULTS.md) all come from files in `docs/results/`.
+
+**Why did the first scan need three harness fixes?** Real apps throw during scenarios, have screens without scroll views, and fall into error boundaries. Each case is now detected and recovered from with a cold start; [docs/DECISIONS.md](docs/DECISIONS.md) has the details.
 
 ## Contributing
 

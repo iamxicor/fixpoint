@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-06T11:33:01.273Z",
+  "context": {
+    "route": "startup",
+    "scenario": "cold-launch",
+    "platform": "ios-simulator",
+    "build": "dev"
+  },
+  "totals": {
+    "commits": 0,
+    "componentRenders": 0,
+    "wastedRenders": 0,
+    "jsBusyMs": 0,
+    "traceMs": 0,
+    "samples": 0
+  },
+  "findings": [
+    {
+      "id": "startup-critical-path:modules:ac027f6e",
+      "kind": "startup-critical-path",
+      "severity": "high",
+      "score": 343.94,
+      "metric": {
+        "name": "modulesInitializedBeforeFirstScreen",
+        "value": 7826,
+        "unit": "count",
+        "deterministic": true,
+        "method": "Metro module registry entries with isInitialized=true when the first route reported ready",
+        "secondary": [
+          {
+            "name": "appModules",
+            "value": 1616,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "nodeModulesPackages",
+            "value": 231,
+            "unit": "count",
+            "deterministic": true
+          },
+          {
+            "name": "bundleEntryToEndMs",
+            "value": 672.72,
+            "unit": "ms",
+            "deterministic": false
+          }
+        ]
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "topPackages": {
+            "lucide-react-native": 1562,
+            "date-fns": 826,
+            "expo-router": 389,
+            "react-native": 385,
+            "react-native-reanimated": 309,
+            "react-native-calendars": 284,
+            "@sentry/core": 176,
+            "react-native-svg": 119,
+            "react-native-sortables": 115,
+            "css-tree": 113,
+            "libphonenumber-js": 109,
+            "@sentry/react-native": 108,
+            "@expo/ui": 86,
+            "react-native-gesture-handler": 84,
+            "react-native-screens": 73
+          },
+          "rnStartupTiming": {
+            "endTime": 14765321.127875004,
+            "executeJavaScriptBundleEntryPointStart": 14764648.40854167,
+            "initializeRuntimeStart": 14764652.36666667,
+            "startTime": 14764652.36691667
+          },
+          "firstRoute": "/"
+        }
+      },
+      "location": {
+        "file": "app/index.tsx",
+        "line": null,
+        "column": null,
+        "symbol": "/"
+      },
+      "suggestedFixes": [
+        "lazy-require"
+      ],
+      "summary": "7826 modules were initialised before the first screen (/) was ready: 1616 from the app and 6210 from 231 packages. Largest packages: lucide-react-native (1562), date-fns (826), expo-router (389), react-native (385), react-native-reanimated (309). Each module initialised here runs its top-level code on the startup critical path."
+    },
+    {
+      "id": "startup-critical-path:eager-routes:cba5df9a",
+      "kind": "startup-critical-path",
+      "severity": "high",
+      "score": 330.39,
+      "metric": {
+        "name": "routeModulesInitializedEagerly",
+        "value": 345,
+        "unit": "count",
+        "deterministic": true,
+        "method": "route files under app/ (excluding layouts) initialised before the first screen, other than the first route itself"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "routes": [
+            "app/(authenticated)/(modal)/camera/index.tsx",
+            "app/(authenticated)/(modal)/create-post/create/index.tsx",
+            "app/(authenticated)/(modal)/lists/select-timelines/index.tsx",
+            "app/(authenticated)/(modal)/create-post/index.tsx",
+            "app/(authenticated)/(modal)/lego/[pageKey]/index.tsx",
+            "app/(authenticated)/(tabs)/timelines/components/TimelineCoverPreview.tsx",
+            "app/(authenticated)/(tabs)/timelines/components/TimelineCoverPreviewItem.tsx",
+            "app/(authenticated)/(modal)/lists/create-list/index.tsx",
+            "app/(authenticated)/(modal)/lists/manage/[list_id]/index.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodThoughtBubble.tsx",
+            "app/(authenticated)/(modal)/mood/manage/manage-mood-emoji-png.ts",
+            "app/(authenticated)/(modal)/mood/manage/mood-bubble-art-layout.ts",
+            "app/(authenticated)/(modal)/user/user-rewards/components/OtherRewardCard.tsx",
+            "app/(authenticated)/(modal)/user/store/components/MelosClaimFlyOverlay.tsx",
+            "app/(authenticated)/(modal)/user/store/components/ClaimFlyOverlay.tsx",
+            "app/(authenticated)/(modal)/lists/manage/index.tsx",
+            "app/(authenticated)/(modal)/melements-showcase.tsx",
+            "app/(authenticated)/(modal)/mood/history/MoodHistoryCard.tsx",
+            "app/(authenticated)/(modal)/mood/history/MoodHistoryReactionSummary.tsx",
+            "app/(authenticated)/(modal)/mood/history/MoodHistoryLoadingShimmer.tsx",
+            "app/(authenticated)/(modal)/mood/history/index.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodBubbleNode.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodEmptyThoughtBubble.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodMeGradientRing.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodDashboardBackground.tsx",
+            "app/(authenticated)/(modal)/mood/manage/mood-orbit-figma-layout.ts",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodDescriptionField.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodDescriptionStep.tsx",
+            "app/(authenticated)/(modal)/mood/manage/mood-picker-hero-layout.ts",
+            "app/(authenticated)/(modal)/mood/manage/MoodCategoryPickerHero.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodDetailHeroPage.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodViewUpdateButton.tsx",
+            "app/(authenticated)/(modal)/mood/manage/mood-screen-model.ts",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodDetailStrip.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodEditFlow.tsx",
+            "app/(authenticated)/(modal)/mood/manage/ManageMoodSaveFooter.tsx",
+            "app/(authenticated)/(modal)/mood/manage/MoodCharactersGrid.tsx",
+            "app/(authenticated)/(modal)/mood/manage/MoodEmojiGrid.tsx",
+            "app/(authenticated)/(modal)/mood/manage/MoodEmojiSelectionCarousel.tsx",
+            "app/(authenticated)/(modal)/mood/manage/MoodFammeliFirstToggle.tsx"
+          ]
+        }
+      },
+      "location": {
+        "file": "app/(authenticated)/(modal)/camera/index.tsx",
+        "line": null,
+        "column": null,
+        "symbol": "routes"
+      },
+      "suggestedFixes": [
+        "lazy-require"
+      ],
+      "summary": "345 route modules other than the first screen ran at startup (for example app/(authenticated)/(modal)/camera/index.tsx, app/(authenticated)/(modal)/create-post/create/index.tsx, app/(authenticated)/(modal)/lists/select-timelines/index.tsx). Routes that are imported eagerly from layouts or shared modules pay their initialisation cost on every cold start."
+    },
+    {
+      "id": "compiler-bailout:components-camera-collage-mode-tsx-206-collagepr:f040c517",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+          "detail": "Found React rule suppression",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/collage-mode.tsx",
+        "line": 206,
+        "column": 2,
+        "symbol": "CollagePreview"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped CollagePreview in components/camera/collage-mode.tsx:206: Found React rule suppression. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-camera-collage-mode-tsx-374-slotcontr:aba63a05",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`dragIndex` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/collage-mode.tsx",
+        "line": 374,
+        "column": 0,
+        "symbol": "SlotControls"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped SlotControls in components/camera/collage-mode.tsx:374: `dragIndex` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-camera-vision-camera-with-gallery-tsx:6c7f6f5a",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Cannot update ref during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/camera/vision-camera-with-gallery.tsx",
+        "line": 302,
+        "column": 7,
+        "symbol": "VisionCameraWithGallery"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped VisionCameraWithGallery in components/camera/vision-camera-with-gallery.tsx:302: Cannot update ref during render. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-pages-timeline-legacy-timeline-redire:00faa750",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+          "detail": "Found React rule suppression",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/pages/timeline/legacy-timeline-redirect.tsx",
+        "line": 59,
+        "column": 7,
+        "symbol": "LegacyTimelineRedirect"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped LegacyTimelineRedirect in components/pages/timeline/legacy-timeline-redirect.tsx:59: Found React rule suppression. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tab-flatlist-tsx-51-tabflatlist:84624abe",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`isListGliding` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tab-flatlist.tsx",
+        "line": 51,
+        "column": 7,
+        "symbol": "TabFlatList"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabFlatList in components/tabs/tab-flatlist.tsx:51: `isListGliding` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tab-scrollview-tsx-54-tabscrollv:71b4b113",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`isListGliding` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tab-scrollview.tsx",
+        "line": 54,
+        "column": 7,
+        "symbol": "TabScrollView"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabScrollView in components/tabs/tab-scrollview.tsx:54: `isListGliding` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tabs-header-wrapper-tsx-12-tabsh:3cdf17fb",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Passing a ref to a function may read its value during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tabs-header-wrapper.tsx",
+        "line": 12,
+        "column": 7,
+        "symbol": "TabsHeaderWrapper"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabsHeaderWrapper in components/tabs/tabs-header-wrapper.tsx:12: Passing a ref to a function may read its value during render. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-tabs-tabs-provider-tsx-77-tabsprovide:1f742a40",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "Cannot access refs during render",
+          "detail": "Cannot access ref value during render",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/tabs/tabs-provider.tsx",
+        "line": 77,
+        "column": 7,
+        "symbol": "TabsProvider"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped TabsProvider in components/tabs/tabs-provider.tsx:77: Cannot access ref value during render. Without compilation none of its inline values or callbacks are memoised."
+    },
+    {
+      "id": "compiler-bailout:components-timeline-grouping-draggableentry-tsx-:9d7c3e03",
+      "kind": "compiler-bailout",
+      "severity": "low",
+      "score": 108.01,
+      "metric": {
+        "name": "skippedFunctions",
+        "value": 1,
+        "unit": "count",
+        "deterministic": true,
+        "method": "babel-plugin-react-compiler CompileError events collected by running the compiler over the app source"
+      },
+      "evidence": {
+        "frames": [],
+        "components": [],
+        "commits": [],
+        "extra": {
+          "reason": "This value cannot be modified",
+          "detail": "`scale` cannot be modified",
+          "relatedToRenderFinding": false
+        }
+      },
+      "location": {
+        "file": "components/timeline-grouping/DraggableEntry.tsx",
+        "line": 141,
+        "column": 7,
+        "symbol": "DraggableEntry"
+      },
+      "suggestedFixes": [
+        "remove-compiler-bailout",
+        "hoist-literals"
+      ],
+      "summary": "The React Compiler skipped DraggableEntry in components/timeline-grouping/DraggableEntry.tsx:141: `scale` cannot be modified. Without compilation none of its inline values or callbacks are memoised."
+    }
+  ],
+  "notes": [
+    "No symbolicator was provided; frames are reported at bundle positions."
+  ]
+}

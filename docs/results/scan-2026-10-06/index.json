@@ -1,0 +1,3215 @@
+{
+  "generatedAt": "2026-10-06T11:38:04.778Z",
+  "metroUrl": "http://127.0.0.1:8091",
+  "device": "iPhone 17",
+  "routes": [
+    {
+      "path": "/camera",
+      "file": "app/(authenticated)/(modal)/camera/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/challenges/reward/leaderboard",
+      "file": "app/(authenticated)/(modal)/challenges/reward/leaderboard.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/create-post/create/_components/TimelineSelectorSkeleton",
+      "file": "app/(authenticated)/(modal)/create-post/create/_components/TimelineSelectorSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/create-post/create",
+      "file": "app/(authenticated)/(modal)/create-post/create/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/create-post",
+      "file": "app/(authenticated)/(modal)/create-post/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/journey/2-type",
+      "file": "app/(authenticated)/(modal)/journey/2-type.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/journey/3-created",
+      "file": "app/(authenticated)/(modal)/journey/3-created.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/journey/day-one-photo",
+      "file": "app/(authenticated)/(modal)/journey/day-one-photo.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/journey",
+      "file": "app/(authenticated)/(modal)/journey/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/journey/invite-friend",
+      "file": "app/(authenticated)/(modal)/journey/invite-friend.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/lego/[pageKey]",
+      "file": "app/(authenticated)/(modal)/lego/[pageKey]/index.tsx",
+      "href": null,
+      "skipped": "needs params: pageKey"
+    },
+    {
+      "path": "/lists/create-list/_components/ListColorField",
+      "file": "app/(authenticated)/(modal)/lists/create-list/_components/ListColorField.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/create-list/_components/TimelineListCard",
+      "file": "app/(authenticated)/(modal)/lists/create-list/_components/TimelineListCard.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/create-list",
+      "file": "app/(authenticated)/(modal)/lists/create-list/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/lists/manage/[list_id]/_components/EditListSkeleton",
+      "file": "app/(authenticated)/(modal)/lists/manage/[list_id]/_components/EditListSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/manage/[list_id]",
+      "file": "app/(authenticated)/(modal)/lists/manage/[list_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: list_id"
+    },
+    {
+      "path": "/lists/manage/_components/ManageListsSkeleton",
+      "file": "app/(authenticated)/(modal)/lists/manage/_components/ManageListsSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/manage",
+      "file": "app/(authenticated)/(modal)/lists/manage/index.tsx",
+      "href": "/lists/manage",
+      "skipped": null,
+      "findingsFile": "lists-manage/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1419,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 998,
+          "severity": "high",
+          "symbol": "RootLayout"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 995,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 760,
+          "severity": "high",
+          "symbol": "DiscoverScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 455,
+          "severity": "high",
+          "symbol": "Screen"
+        }
+      ]
+    },
+    {
+      "path": "/lists/select-timelines/_components/SelectTimelinesSkeleton",
+      "file": "app/(authenticated)/(modal)/lists/select-timelines/_components/SelectTimelinesSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/select-timelines/_components/SelectableTimelineRow",
+      "file": "app/(authenticated)/(modal)/lists/select-timelines/_components/SelectableTimelineRow.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/select-timelines/_components/SelectionMark",
+      "file": "app/(authenticated)/(modal)/lists/select-timelines/_components/SelectionMark.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/lists/select-timelines",
+      "file": "app/(authenticated)/(modal)/lists/select-timelines/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/melements-showcase",
+      "file": "app/(authenticated)/(modal)/melements-showcase.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/mood/history/MoodHistoryCard",
+      "file": "app/(authenticated)/(modal)/mood/history/MoodHistoryCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/history/MoodHistoryLoadingShimmer",
+      "file": "app/(authenticated)/(modal)/mood/history/MoodHistoryLoadingShimmer.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/history/MoodHistoryReactionSummary",
+      "file": "app/(authenticated)/(modal)/mood/history/MoodHistoryReactionSummary.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/history",
+      "file": "app/(authenticated)/(modal)/mood/history/index.tsx",
+      "href": "/mood/history",
+      "skipped": null,
+      "findingsFile": "mood-history/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 3993,
+          "severity": "high",
+          "symbol": "MelementsNotificationsScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 2185,
+          "severity": "high",
+          "symbol": "RootLayout"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1802,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1725,
+          "severity": "high",
+          "symbol": "DiscoverScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1392,
+          "severity": "high",
+          "symbol": "Screen"
+        }
+      ]
+    },
+    {
+      "path": "/mood/manage/ManageMoodBubbleNode",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodBubbleNode.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodDashboardBackground",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodDashboardBackground.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodDescriptionField",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodDescriptionField.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodDescriptionStep",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodDescriptionStep.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodDetailHeroPage",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodDetailHeroPage.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodDetailStrip",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodDetailStrip.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodEditFlow",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodEditFlow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodEditHeader",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodEditHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodEmptyThoughtBubble",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodEmptyThoughtBubble.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodMeGradientRing",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodMeGradientRing.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodOrbitSkeleton",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodOrbitSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodPreviousMoodsButton",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodPreviousMoodsButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodSaveFooter",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodSaveFooter.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodSocialBar",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodSocialBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodThoughtBubble",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodThoughtBubble.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodViewFlow",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodViewFlow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodViewHeader",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodViewHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/ManageMoodViewUpdateButton",
+      "file": "app/(authenticated)/(modal)/mood/manage/ManageMoodViewUpdateButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodCategoryPickerHero",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodCategoryPickerHero.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodCharacterSelectionCarousel",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodCharacterSelectionCarousel.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodCharactersGrid",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodCharactersGrid.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodChipsRow",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodChipsRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodEmojiGrid",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodEmojiGrid.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodEmojiSelectionCarousel",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodEmojiSelectionCarousel.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodFammeliFirstToggle",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodFammeliFirstToggle.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodFeelingsGrid",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodFeelingsGrid.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodFeelingsSectionsSwap",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodFeelingsSectionsSwap.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodLoadingShimmer",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodLoadingShimmer.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodManageFloatingCharacters",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodManageFloatingCharacters.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage/MoodSelectionPanel",
+      "file": "app/(authenticated)/(modal)/mood/manage/MoodSelectionPanel.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/mood/manage",
+      "file": "app/(authenticated)/(modal)/mood/manage/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/post/location/_components/LocationSearchStep",
+      "file": "app/(authenticated)/(modal)/post/location/_components/LocationSearchStep.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/post/location/_components/LocationsEmptyState",
+      "file": "app/(authenticated)/(modal)/post/location/_components/LocationsEmptyState.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/post/location",
+      "file": "app/(authenticated)/(modal)/post/location/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/post/metadata/[session_id]",
+      "file": "app/(authenticated)/(modal)/post/metadata/[session_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: session_id"
+    },
+    {
+      "path": "/post/post-by-day/[day]",
+      "file": "app/(authenticated)/(modal)/post/post-by-day/[day]/index.tsx",
+      "href": null,
+      "skipped": "needs params: day"
+    },
+    {
+      "path": "/post/preview",
+      "file": "app/(authenticated)/(modal)/post/preview/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/post/search/date-range",
+      "file": "app/(authenticated)/(modal)/post/search/date-range/index.tsx",
+      "href": "/post/search/date-range",
+      "skipped": null,
+      "error": "Route did not reach /post/search/date-range within 15000 ms (last: /)"
+    },
+    {
+      "path": "/post/search/location",
+      "file": "app/(authenticated)/(modal)/post/search/location/index.tsx",
+      "href": "/post/search/location",
+      "skipped": null,
+      "error": "Route did not reach /post/search/location within 15000 ms (last: /)"
+    },
+    {
+      "path": "/post/search/tag",
+      "file": "app/(authenticated)/(modal)/post/search/tag/index.tsx",
+      "href": "/post/search/tag",
+      "skipped": null,
+      "error": "Route did not reach /post/search/tag within 15000 ms (last: /)"
+    },
+    {
+      "path": "/post/search/timeline",
+      "file": "app/(authenticated)/(modal)/post/search/timeline/index.tsx",
+      "href": "/post/search/timeline",
+      "skipped": null,
+      "error": "Route did not reach /post/search/timeline within 15000 ms (last: /)"
+    },
+    {
+      "path": "/post/tag",
+      "file": "app/(authenticated)/(modal)/post/tag/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/postcard/_components/PostcardHeader",
+      "file": "app/(authenticated)/(modal)/postcard/_components/PostcardHeader.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/postcard/add-postcard-to-timeline",
+      "file": "app/(authenticated)/(modal)/postcard/add-postcard-to-timeline/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/postcard/create",
+      "file": "app/(authenticated)/(modal)/postcard/create/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/postcard/select-image/_components/PostcardPhotoTile",
+      "file": "app/(authenticated)/(modal)/postcard/select-image/_components/PostcardPhotoTile.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/postcard/select-image",
+      "file": "app/(authenticated)/(modal)/postcard/select-image/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/postcard/share",
+      "file": "app/(authenticated)/(modal)/postcard/share/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/FriendButtons",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/FriendButtons.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/profile/[user_id]/FriendsProfile",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/FriendsProfile.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/profile/[user_id]/NonFriendButtons",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/NonFriendButtons.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/profile/[user_id]/NonFriendProfile",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/NonFriendProfile.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/profile/[user_id]/UserProfileActionsheet",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/UserProfileActionsheet.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/profile/[user_id]/characters",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/characters/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/feed/[timeline_id]/[post_id]",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/feed/[timeline_id]/[post_id]/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/friends",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/friends/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/mutual-timelines",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/mutual-timelines/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/posts-in-common",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/posts-in-common/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/profile/[user_id]/user-timelines",
+      "file": "app/(authenticated)/(modal)/profile/[user_id]/user-timelines/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/reward-animation/[id]/components/ArcadeJoystick",
+      "file": "app/(authenticated)/(modal)/reward-animation/[id]/components/ArcadeJoystick.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/[id]/components/ClawAssembly",
+      "file": "app/(authenticated)/(modal)/reward-animation/[id]/components/ClawAssembly.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/[id]/components/HalloweenWebs",
+      "file": "app/(authenticated)/(modal)/reward-animation/[id]/components/HalloweenWebs.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/[id]/components/SmokeOverlay",
+      "file": "app/(authenticated)/(modal)/reward-animation/[id]/components/SmokeOverlay.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/[id]",
+      "file": "app/(authenticated)/(modal)/reward-animation/[id]/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/reward-animation/crafiting/components/CraftingRevealOverlay",
+      "file": "app/(authenticated)/(modal)/reward-animation/crafiting/components/CraftingRevealOverlay.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/crafiting",
+      "file": "app/(authenticated)/(modal)/reward-animation/crafiting/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/reward-animation/first-character/components/StepDots",
+      "file": "app/(authenticated)/(modal)/reward-animation/first-character/components/StepDots.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/first-character/components/StepOne",
+      "file": "app/(authenticated)/(modal)/reward-animation/first-character/components/StepOne.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/first-character/components/StepThree",
+      "file": "app/(authenticated)/(modal)/reward-animation/first-character/components/StepThree.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/first-character/components/StepTwo",
+      "file": "app/(authenticated)/(modal)/reward-animation/first-character/components/StepTwo.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/reward-animation/first-character",
+      "file": "app/(authenticated)/(modal)/reward-animation/first-character/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/_components/ScheduleDayRow",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/_components/ScheduleDayRow.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/[timeline_id]/_components/StreakSetupHeader",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/_components/StreakSetupHeader.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/[timeline_id]/manage",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/manage/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/message",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/message/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/protected",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/protected/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/reminder",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/reminder/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/save",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/save/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/schedules",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/schedules/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/[timeline_id]/start",
+      "file": "app/(authenticated)/(modal)/streak/[timeline_id]/start/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/_components/StreakPageHeader",
+      "file": "app/(authenticated)/(modal)/streak/_components/StreakPageHeader.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/_components/StreakQueryError",
+      "file": "app/(authenticated)/(modal)/streak/_components/StreakQueryError.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/_components/StreakSkeletonBlock",
+      "file": "app/(authenticated)/(modal)/streak/_components/StreakSkeletonBlock.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/character-back/_components/streak-outcome-screen",
+      "file": "app/(authenticated)/(modal)/streak/character-back/_components/streak-outcome-screen.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streak/character-back",
+      "file": "app/(authenticated)/(modal)/streak/character-back/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/manage",
+      "file": "app/(authenticated)/(modal)/streak/manage/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streak/streak-lost",
+      "file": "app/(authenticated)/(modal)/streak/streak-lost/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/streaks-today/_components/ChallengeTodoCard",
+      "file": "app/(authenticated)/(modal)/streaks-today/_components/ChallengeTodoCard.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streaks-today/_components/StreaksTodayPage",
+      "file": "app/(authenticated)/(modal)/streaks-today/_components/StreaksTodayPage.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streaks-today/_components/TodoCountdown",
+      "file": "app/(authenticated)/(modal)/streaks-today/_components/TodoCountdown.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streaks-today/_components/TodoCtaButton",
+      "file": "app/(authenticated)/(modal)/streaks-today/_components/TodoCtaButton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/streaks-today",
+      "file": "app/(authenticated)/(modal)/streaks-today/index.tsx",
+      "href": "/streaks-today",
+      "skipped": null,
+      "findingsFile": "streaks-today/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 932,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 312,
+          "severity": "high",
+          "symbol": "StreakTimelineCard"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 25.65,
+          "severity": "high",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 0.33,
+          "severity": "low",
+          "symbol": "View"
+        }
+      ]
+    },
+    {
+      "path": "/timeline/[timeline_id]/badges",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/badges/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-crew",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-crew.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-finalize",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-finalize.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-idea",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-idea.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-leaderboard",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-leaderboard.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-melistones",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-melistones.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/challenge-refer",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/challenge-refer.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/delete",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/delete/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/BulkRoleActionsheet",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/BulkRoleActionsheet.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/EditPermissionsBottomBar",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/EditPermissionsBottomBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/EditPermissionsSkeleton",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/EditPermissionsSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/IndividualRoleSheet",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/IndividualRoleSheet.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/PermissionCheckbox",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/PermissionCheckbox.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/RemoveMembersConfirmPopUp",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/RemoveMembersConfirmPopUp.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/RoleOptionRow",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/RoleOptionRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions/components/SelectableMemberRow",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/components/SelectableMemberRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-permissions",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-permissions/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/edit-timeline-badge",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/edit-timeline-badge.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/group-challenge",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/group-challenge/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/group-challenge/race",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/group-challenge/race.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/group-challenge/shared",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/group-challenge/shared.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/invites",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/invites.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/join-config/category",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/join-config/category/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/join-config",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/join-config/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/join-requests",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/join-requests/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/journey-completed",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/journey-completed.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/journey-type",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/journey-type.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/leaderboard",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/leaderboard/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ContactPermissionActionsheetMelements",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ContactPermissionActionsheetMelements.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/EditPermissionsEntry",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/EditPermissionsEntry.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactActionsheetMelements",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactActionsheetMelements.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsErrorState",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsErrorState.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsLoadingList",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsLoadingList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsMembersList",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsMembersList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsRequestsList",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsRequestsList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsStackHeader",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsStackHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsTabBar",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsTabBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsTabPager",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsTabPager.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/ManageContactsTopActions",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/ManageContactsTopActions.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/MemberFriendButton",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/MemberFriendButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts/components/MemberRow",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/components/MemberRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage-contacts",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage-contacts/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/manage",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/manage/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/pick-preview-posts",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/pick-preview-posts/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/[post_id]/comment/[comment_id]/reactions",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/[post_id]/comment/[comment_id]/reactions/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/[post_id]/info",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/[post_id]/info/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/[post_id]/reactions",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/[post_id]/reactions/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/[post_id]/report",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/[post_id]/report/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/[post_id]/timeline-feed",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/[post_id]/timeline-feed/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/day/[day]",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/day/[day]/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/post/search",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/post/search/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/preview-grid",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/preview-grid/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/report",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/report/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/bidirectional-timeline-feed/[post_id]",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/bidirectional-timeline-feed/[post_id]/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/calendar",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/calendar/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/CreatePostGlassButton.ios",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/CreatePostGlassButton.ios.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/CreatePostGlassButton",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/CreatePostGlassButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/GridItem",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/GridItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/ListFooter",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/ListFooter.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineArrival",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineArrival.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineContent",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineContent.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineCreatePostButton",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineCreatePostButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineGuestEmptyState",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineGuestEmptyState.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineGuestGrid",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineGuestGrid.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineScreenSkeleton",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineScreenSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineShimmer",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineShimmer.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/components/TimelineTabs",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/components/TimelineTabs.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/[timeline_id]/view/timeline-feed",
+      "file": "app/(authenticated)/(modal)/timeline/[timeline_id]/view/timeline-feed/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/create-timeline",
+      "file": "app/(authenticated)/(modal)/timeline/create-timeline/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/discoverable-config",
+      "file": "app/(authenticated)/(modal)/timeline/discoverable-config/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/preview-grid-config",
+      "file": "app/(authenticated)/(modal)/timeline/preview-grid-config/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/search",
+      "file": "app/(authenticated)/(modal)/timeline/search/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/templates/[id]",
+      "file": "app/(authenticated)/(modal)/timeline/templates/[id].tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/templates",
+      "file": "app/(authenticated)/(modal)/timeline/templates/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline/timeline-creation",
+      "file": "app/(authenticated)/(modal)/timeline/timeline-creation/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/[id]/report",
+      "file": "app/(authenticated)/(modal)/user/[id]/report/index.tsx",
+      "href": null,
+      "skipped": "needs params: id"
+    },
+    {
+      "path": "/user/affiliate-program",
+      "file": "app/(authenticated)/(modal)/user/affiliate-program/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/change-phone-number/components/ChangePhoneHeader",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/components/ChangePhoneHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/change-phone-number/components/PhoneNumberField",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/components/PhoneNumberField.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/change-phone-number/components/RichErrorMessage",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/components/RichErrorMessage.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/change-phone-number/components/VerificationCodeField",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/components/VerificationCodeField.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/change-phone-number",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/change-phone-number/verify",
+      "file": "app/(authenticated)/(modal)/user/change-phone-number/verify.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/edit-profile/components/EditProfileUsernameField",
+      "file": "app/(authenticated)/(modal)/user/edit-profile/components/EditProfileUsernameField.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/edit-profile/components/InputFieldListItem",
+      "file": "app/(authenticated)/(modal)/user/edit-profile/components/InputFieldListItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/edit-profile/components/ProfileImageFieldItem",
+      "file": "app/(authenticated)/(modal)/user/edit-profile/components/ProfileImageFieldItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/edit-profile",
+      "file": "app/(authenticated)/(modal)/user/edit-profile/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/edit-profile/index.ui",
+      "file": "app/(authenticated)/(modal)/user/edit-profile/index.ui.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/find-friends",
+      "file": "app/(authenticated)/(modal)/user/find-friends.tsx",
+      "href": "/user/find-friends",
+      "skipped": null,
+      "findingsFile": "user-find-friends/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 745,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 528,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 64,
+          "severity": "medium",
+          "symbol": "PostCardBrick"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 62,
+          "severity": "medium",
+          "symbol": "ProfileAvatarSection"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 54,
+          "severity": "medium",
+          "symbol": "TimelineFeedProvider"
+        }
+      ]
+    },
+    {
+      "path": "/user/friends",
+      "file": "app/(authenticated)/(modal)/user/friends/index.tsx",
+      "href": "/user/friends",
+      "skipped": null,
+      "findingsFile": "user-friends/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 603,
+          "severity": "high",
+          "symbol": "ScrollView"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 499,
+          "severity": "high",
+          "symbol": "FriendsScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 482,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 56,
+          "severity": "medium",
+          "symbol": "ContactsSyncPrompt"
+        }
+      ]
+    },
+    {
+      "path": "/user/manage-account/delete",
+      "file": "app/(authenticated)/(modal)/user/manage-account/delete/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/notification-settings/components/SwitchNotificationRow",
+      "file": "app/(authenticated)/(modal)/user/notification-settings/components/SwitchNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/notification-settings/index.header.melements",
+      "file": "app/(authenticated)/(modal)/user/notification-settings/index.header.melements.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/notification-settings",
+      "file": "app/(authenticated)/(modal)/user/notification-settings/index.tsx",
+      "href": "/user/notification-settings",
+      "skipped": null,
+      "findingsFile": "user-notification-settings/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 490,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 282,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 178,
+          "severity": "high",
+          "symbol": "UserNotificationSettingsScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 42,
+          "severity": "medium",
+          "symbol": "AnimatedComponent(View)"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 26,
+          "severity": "low",
+          "symbol": "Screen"
+        }
+      ]
+    },
+    {
+      "path": "/user/notification-settings/index.ui",
+      "file": "app/(authenticated)/(modal)/user/notification-settings/index.ui.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/profile",
+      "file": "app/(authenticated)/(modal)/user/profile/index.tsx",
+      "href": "/user/profile",
+      "skipped": null,
+      "findingsFile": "user-profile/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1225,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 22.59,
+          "severity": "medium",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 0.8,
+          "severity": "low",
+          "symbol": "View"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 26,
+          "severity": "low",
+          "symbol": "Screen"
+        }
+      ]
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailContent",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailContent.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailHero",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailHero.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailRarity",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailRarity.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailTopBar",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailTopBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailTopIcon",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/components/CharacterDetailTopIcon.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/[rarity]/character/[character_id]",
+      "file": "app/(authenticated)/(modal)/user/rewards/[rarity]/character/[character_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: rarity, character_id"
+    },
+    {
+      "path": "/user/rewards/combine-characters",
+      "file": "app/(authenticated)/(modal)/user/rewards/combine-characters/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/rewards/components/ProgressFammelis",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/ProgressFammelis.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsActiveHeader",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsActiveHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsCharacterCard",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsCharacterCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsCharacterListItem",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsCharacterListItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsCraftingFooter",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsCraftingFooter.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsFamMelisCount",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsFamMelisCount.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsHeader",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsLoadingSkeleton",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsLoadingSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsQuestCard",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsQuestCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsTabBar",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsTabBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/components/RewardsTabsHeader",
+      "file": "app/(authenticated)/(modal)/user/rewards/components/RewardsTabsHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/crafting/components/CraftingQuestListItem",
+      "file": "app/(authenticated)/(modal)/user/rewards/crafting/components/CraftingQuestListItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/crafting/components/CraftingQuestRecipePanel",
+      "file": "app/(authenticated)/(modal)/user/rewards/crafting/components/CraftingQuestRecipePanel.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/rewards/crafting",
+      "file": "app/(authenticated)/(modal)/user/rewards/crafting/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/rewards/crafting/recipes",
+      "file": "app/(authenticated)/(modal)/user/rewards/crafting/recipes/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/rewards",
+      "file": "app/(authenticated)/(modal)/user/rewards/index.tsx",
+      "href": "/user/rewards",
+      "skipped": null,
+      "findingsFile": "user-rewards/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 858,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 425,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 311,
+          "severity": "high",
+          "symbol": "ProgressFammelis"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 25.03,
+          "severity": "high",
+          "symbol": "ScreenStack"
+        }
+      ]
+    },
+    {
+      "path": "/user/settings/api-dashboard",
+      "file": "app/(authenticated)/(modal)/user/settings/api-dashboard/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/settings/components/SettingsMenu",
+      "file": "app/(authenticated)/(modal)/user/settings/components/SettingsMenu.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/settings/components/SettingsMenuItem",
+      "file": "app/(authenticated)/(modal)/user/settings/components/SettingsMenuItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/settings/components/SettingsSwitchItem",
+      "file": "app/(authenticated)/(modal)/user/settings/components/SettingsSwitchItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/settings",
+      "file": "app/(authenticated)/(modal)/user/settings/index.tsx",
+      "href": "/user/settings",
+      "skipped": null,
+      "findingsFile": "user-settings/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 629,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 26,
+          "severity": "low",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "long-task",
+          "metric": "longestTaskMs",
+          "value": 62.37,
+          "severity": "low",
+          "symbol": "mapPrototypeSet"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 9.51,
+          "severity": "low",
+          "symbol": "ScreenStack"
+        }
+      ]
+    },
+    {
+      "path": "/user/share-feedback/ShareFeedbackHeader",
+      "file": "app/(authenticated)/(modal)/user/share-feedback/ShareFeedbackHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/share-feedback/ShareFeedbackView",
+      "file": "app/(authenticated)/(modal)/user/share-feedback/ShareFeedbackView.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/share-feedback",
+      "file": "app/(authenticated)/(modal)/user/share-feedback/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/share-profile/ShareProfileActions",
+      "file": "app/(authenticated)/(modal)/user/share-profile/ShareProfileActions.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/share-profile/ShareProfileCard",
+      "file": "app/(authenticated)/(modal)/user/share-profile/ShareProfileCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/share-profile/ShareProfileStickers",
+      "file": "app/(authenticated)/(modal)/user/share-profile/ShareProfileStickers.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/share-profile",
+      "file": "app/(authenticated)/(modal)/user/share-profile/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/user/store/components/ClaimFlyOverlay",
+      "file": "app/(authenticated)/(modal)/user/store/components/ClaimFlyOverlay.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/DailyMelosCard",
+      "file": "app/(authenticated)/(modal)/user/store/components/DailyMelosCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/MelosClaimFlyOverlay",
+      "file": "app/(authenticated)/(modal)/user/store/components/MelosClaimFlyOverlay.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreBuyConfirmActionsheet",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreBuyConfirmActionsheet.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreBuyConfirmItemPreview",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreBuyConfirmItemPreview.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StorePrice",
+      "file": "app/(authenticated)/(modal)/user/store/components/StorePrice.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreRemoteImage",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreRemoteImage.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreShelfSectionLabels",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreShelfSectionLabels.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreShelfSlot",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreShelfSlot.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreShelfSlots",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreShelfSlots.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreSkeleton",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store/components/StoreStage",
+      "file": "app/(authenticated)/(modal)/user/store/components/StoreStage.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/store",
+      "file": "app/(authenticated)/(modal)/user/store/index.tsx",
+      "href": "/user/store",
+      "skipped": null,
+      "findingsFile": "user-store/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 492,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 487,
+          "severity": "high",
+          "symbol": "StoreStage"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 61,
+          "severity": "medium",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 21,
+          "severity": "low",
+          "symbol": "Animated(View)"
+        }
+      ]
+    },
+    {
+      "path": "/user/streaks/_components/StreakRows",
+      "file": "app/(authenticated)/(modal)/user/streaks/_components/StreakRows.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/streaks/_components/StreaksSkeleton",
+      "file": "app/(authenticated)/(modal)/user/streaks/_components/StreaksSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/streaks",
+      "file": "app/(authenticated)/(modal)/user/streaks/index.tsx",
+      "href": "/user/streaks",
+      "skipped": null,
+      "findingsFile": "user-streaks/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 498,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 166,
+          "severity": "high",
+          "symbol": "StreakProfilePage"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 6.54,
+          "severity": "low",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ForwardRef(RemapPropsComponent) via TimelineDragProvider"
+        }
+      ]
+    },
+    {
+      "path": "/user/timelines/_components/TimelineFilterChips",
+      "file": "app/(authenticated)/(modal)/user/timelines/_components/TimelineFilterChips.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/timelines/_components/TimelineRow",
+      "file": "app/(authenticated)/(modal)/user/timelines/_components/TimelineRow.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/timelines/_components/TimelinesEmptyState",
+      "file": "app/(authenticated)/(modal)/user/timelines/_components/TimelinesEmptyState.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/timelines/_components/TimelinesErrorState",
+      "file": "app/(authenticated)/(modal)/user/timelines/_components/TimelinesErrorState.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/timelines/_components/TimelinesSkeleton",
+      "file": "app/(authenticated)/(modal)/user/timelines/_components/TimelinesSkeleton.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/timelines",
+      "file": "app/(authenticated)/(modal)/user/timelines/index.tsx",
+      "href": "/user/timelines",
+      "skipped": null,
+      "findingsFile": "user-timelines/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1969,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 791,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 547,
+          "severity": "high",
+          "symbol": "ProfileShopMenuOption"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 37.67,
+          "severity": "high",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 23,
+          "severity": "medium",
+          "symbol": "CellRenderer via TimelineCard"
+        }
+      ]
+    },
+    {
+      "path": "/user/top-followers",
+      "file": "app/(authenticated)/(modal)/user/top-followers/index.tsx",
+      "href": "/user/top-followers",
+      "skipped": null,
+      "findingsFile": "user-top-followers/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 678,
+          "severity": "high",
+          "symbol": "Tab"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 599,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 114,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 78,
+          "severity": "medium",
+          "symbol": "Tabs"
+        }
+      ]
+    },
+    {
+      "path": "/user/user-rewards/choose/ShufflingPackageChoice",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/choose/ShufflingPackageChoice.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/choose",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/choose/index.tsx",
+      "href": "/user/user-rewards/choose",
+      "skipped": null,
+      "findingsFile": "user-user-rewards-choose/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 430,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 26,
+          "severity": "low",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ForwardRef(RemapPropsComponent) via TimelineDragProvider"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ScrollView"
+        }
+      ]
+    },
+    {
+      "path": "/user/user-rewards/components/EarnXpActionCard",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/EarnXpActionCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/EarnXpActionsList",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/EarnXpActionsList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/EarnXpRewardText",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/EarnXpRewardText.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/LevelRewardCard",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/LevelRewardCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/LevelRewardsList",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/LevelRewardsList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/NextRewardSection",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/NextRewardSection.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/OtherRewardCard",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/OtherRewardCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards/components/OtherRewardsList",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/components/OtherRewardsList.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/user-rewards",
+      "file": "app/(authenticated)/(modal)/user/user-rewards/index.tsx",
+      "href": "/user/user-rewards",
+      "skipped": null,
+      "findingsFile": "user-user-rewards/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 2003,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 349,
+          "severity": "high",
+          "symbol": "ScrollView"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 44.32,
+          "severity": "high",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 40,
+          "severity": "medium",
+          "symbol": "TextWithBold"
+        }
+      ]
+    },
+    {
+      "path": "/utils/qr-code/components/QRCodeModalAction",
+      "file": "app/(authenticated)/(modal)/utils/qr-code/components/QRCodeModalAction.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/utils/qr-code/components/QRCodeModalContent",
+      "file": "app/(authenticated)/(modal)/utils/qr-code/components/QRCodeModalContent.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/utils/qr-code/components/QRCodeModalEmpty",
+      "file": "app/(authenticated)/(modal)/utils/qr-code/components/QRCodeModalEmpty.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/utils/qr-code/components/QRCodeModalHeader",
+      "file": "app/(authenticated)/(modal)/utils/qr-code/components/QRCodeModalHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/utils/qr-code",
+      "file": "app/(authenticated)/(modal)/utils/qr-code/index.tsx",
+      "href": "/utils/qr-code",
+      "skipped": null,
+      "findingsFile": "utils-qr-code/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 421,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 32,
+          "severity": "low",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ForwardRef(RemapPropsComponent) via TimelineDragProvider"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ScrollView"
+        }
+      ]
+    },
+    {
+      "path": "/utils/select-date",
+      "file": "app/(authenticated)/(modal)/utils/select-date/index.tsx",
+      "href": "/utils/select-date",
+      "skipped": null,
+      "error": "Route did not reach /utils/select-date within 15000 ms (last: /)"
+    },
+    {
+      "path": "/create-post",
+      "file": "app/(authenticated)/(tabs)/create-post.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/notifications/[timeline_id]/notification-feed/[post_id]",
+      "file": "app/(authenticated)/(tabs)/notifications/[timeline_id]/notification-feed/[post_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: timeline_id, post_id"
+    },
+    {
+      "path": "/notifications/components/FriendRequestAcceptedXpRewardNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/FriendRequestAcceptedXpRewardNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/FriendRequestActions",
+      "file": "app/(authenticated)/(tabs)/notifications/components/FriendRequestActions.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/InviteRewardNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/InviteRewardNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/MemberChallengeSettledNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/MemberChallengeSettledNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationListItem",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationListItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationListRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationListRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationMessage",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationMessage.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationMoodBubble",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationMoodBubble.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationRewardCard",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationRewardCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationRowFrame",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationRowFrame.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationSectionListSkeleton",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationSectionListSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationStates",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationStates.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/NotificationsHeader",
+      "file": "app/(authenticated)/(tabs)/notifications/components/NotificationsHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/TimelineJoinRequestAcceptedXpRewardNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/TimelineJoinRequestAcceptedXpRewardNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/TimelineJoinRequestNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/TimelineJoinRequestNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications/components/TimelineMadeDiscoverableNotificationRow",
+      "file": "app/(authenticated)/(tabs)/notifications/components/TimelineMadeDiscoverableNotificationRow.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/notifications",
+      "file": "app/(authenticated)/(tabs)/notifications/index.tsx",
+      "href": "/notifications",
+      "skipped": null,
+      "findingsFile": "notifications/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1468,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1331,
+          "severity": "high",
+          "symbol": "MelementsNotificationsScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 60,
+          "severity": "high",
+          "symbol": "CellRenderer via TouchableOpacity"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 25.24,
+          "severity": "high",
+          "symbol": "TabsHost"
+        }
+      ]
+    },
+    {
+      "path": "/search/components/FeedHeaderBar",
+      "file": "app/(authenticated)/(tabs)/search/components/FeedHeaderBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/search/components/FeedTopSkeleton",
+      "file": "app/(authenticated)/(tabs)/search/components/FeedTopSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/search/components/FriendsMoodStrip",
+      "file": "app/(authenticated)/(tabs)/search/components/FriendsMoodStrip.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/search/examples",
+      "file": "app/(authenticated)/(tabs)/search/examples/index.tsx",
+      "href": "/search/examples",
+      "skipped": null,
+      "findingsFile": "search-examples/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1558,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 251,
+          "severity": "high",
+          "symbol": "ScrollView"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 128,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 27.98,
+          "severity": "high",
+          "symbol": "TabsHost"
+        }
+      ]
+    },
+    {
+      "path": "/search",
+      "file": "app/(authenticated)/(tabs)/search/index.tsx",
+      "href": "/search",
+      "skipped": null,
+      "findingsFile": "search/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 431,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 23,
+          "severity": "low",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 13,
+          "severity": "low",
+          "symbol": "TabsScreen via Screen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 8,
+          "severity": "low",
+          "symbol": "ScrollView"
+        }
+      ]
+    },
+    {
+      "path": "/search/search-feed/[timeline_id]/[post_id]",
+      "file": "app/(authenticated)/(tabs)/search/search-feed/[timeline_id]/[post_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: timeline_id, post_id"
+    },
+    {
+      "path": "/timelines/HomePageShimmer",
+      "file": "app/(authenticated)/(tabs)/timelines/HomePageShimmer.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/[timeline_id]/[...rest]",
+      "file": "app/(authenticated)/(tabs)/timelines/[timeline_id]/[...rest].tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/[timeline_id]",
+      "file": "app/(authenticated)/(tabs)/timelines/[timeline_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: timeline_id"
+    },
+    {
+      "path": "/timelines/components/CreateTimelineButton",
+      "file": "app/(authenticated)/(tabs)/timelines/components/CreateTimelineButton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/CreateTimelineCoachMark",
+      "file": "app/(authenticated)/(tabs)/timelines/components/CreateTimelineCoachMark.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/HomeHeader/HomeSearchBar",
+      "file": "app/(authenticated)/(tabs)/timelines/components/HomeHeader/HomeSearchBar.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/HomeHeader/MoodRail",
+      "file": "app/(authenticated)/(tabs)/timelines/components/HomeHeader/MoodRail.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/HomeHeader/MoodRailCell",
+      "file": "app/(authenticated)/(tabs)/timelines/components/HomeHeader/MoodRailCell.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/HomeHeader/MoodRailSeeAllCell",
+      "file": "app/(authenticated)/(tabs)/timelines/components/HomeHeader/MoodRailSeeAllCell.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/HomeTimelinesEmptyPlaceholder",
+      "file": "app/(authenticated)/(tabs)/timelines/components/HomeTimelinesEmptyPlaceholder.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/MyJourneysHeader",
+      "file": "app/(authenticated)/(tabs)/timelines/components/MyJourneysHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/TimelineCoverPreview",
+      "file": "app/(authenticated)/(tabs)/timelines/components/TimelineCoverPreview.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/TimelineCoverPreviewItem",
+      "file": "app/(authenticated)/(tabs)/timelines/components/TimelineCoverPreviewItem.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/components/TimelineListHeader",
+      "file": "app/(authenticated)/(tabs)/timelines/components/TimelineListHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/examples",
+      "file": "app/(authenticated)/(tabs)/timelines/examples/index.tsx",
+      "href": "/timelines/examples",
+      "skipped": null,
+      "findingsFile": "timelines-examples/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 1519,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 251,
+          "severity": "high",
+          "symbol": "ScrollView"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 25.62,
+          "severity": "high",
+          "symbol": "ScreenStack"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 28.16,
+          "severity": "high",
+          "symbol": "PagerView"
+        }
+      ]
+    },
+    {
+      "path": "/timelines",
+      "file": "app/(authenticated)/(tabs)/timelines/index.tsx",
+      "href": "/timelines",
+      "skipped": null,
+      "findingsFile": "timelines/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 392,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 18.06,
+          "severity": "medium",
+          "symbol": "TimelineDragProvider"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 5,
+          "severity": "low",
+          "symbol": "TabsScreen via Screen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 8.5,
+          "severity": "low",
+          "symbol": "TabsHost"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "cascadingUpdates",
+          "value": 2,
+          "severity": "low",
+          "symbol": "BaseNavigationContainer"
+        }
+      ]
+    },
+    {
+      "path": "/timelines/templates/components/TimelineExamplesErrorState",
+      "file": "app/(authenticated)/(tabs)/timelines/templates/components/TimelineExamplesErrorState.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/timelines/templates",
+      "file": "app/(authenticated)/(tabs)/timelines/templates/index.tsx",
+      "href": "/timelines/templates",
+      "skipped": null,
+      "findingsFile": "timelines-templates/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 734,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 528,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 63,
+          "severity": "medium",
+          "symbol": "PostCardBrick"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 54,
+          "severity": "medium",
+          "symbol": "TimelineFeedProvider"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 15,
+          "severity": "medium",
+          "symbol": "HomeEntryCard"
+        }
+      ]
+    },
+    {
+      "path": "/user/components/ProfileContentSummary",
+      "file": "app/(authenticated)/(tabs)/user/components/ProfileContentSummary.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user/components/ProfileRewardsCard",
+      "file": "app/(authenticated)/(tabs)/user/components/ProfileRewardsCard.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/user",
+      "file": "app/(authenticated)/(tabs)/user/index.tsx",
+      "href": "/user",
+      "skipped": null,
+      "findingsFile": "user/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 403,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 23,
+          "severity": "low",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 13,
+          "severity": "low",
+          "symbol": "TabsScreen via Screen"
+        },
+        {
+          "kind": "hot-component",
+          "metric": "selfMsPerRender",
+          "value": 8.01,
+          "severity": "low",
+          "symbol": "TabsHost"
+        }
+      ]
+    },
+    {
+      "path": "/user/posts-full-screen/[initialView]/_components/PostsGridStates",
+      "file": "app/(authenticated)/(tabs)/user/posts-full-screen/[initialView]/_components/PostsGridStates.tsx",
+      "href": null,
+      "skipped": "under a _private directory"
+    },
+    {
+      "path": "/user/posts-full-screen/[initialView]",
+      "file": "app/(authenticated)/(tabs)/user/posts-full-screen/[initialView]/index.tsx",
+      "href": null,
+      "skipped": "needs params: initialView"
+    },
+    {
+      "path": "/user/user-posts-feed",
+      "file": "app/(authenticated)/(tabs)/user/user-posts-feed/index.tsx",
+      "href": "/user/user-posts-feed",
+      "skipped": null,
+      "findingsFile": "user-user-posts-feed/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 837,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 340,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 232,
+          "severity": "high",
+          "symbol": "UserPostsFeedScreen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 43,
+          "severity": "medium",
+          "symbol": "Screen"
+        }
+      ]
+    },
+    {
+      "path": "/onboarding/country-code-picker",
+      "file": "app/(unauthenticated)/(modal)/onboarding/country-code-picker.tsx",
+      "href": "/onboarding/country-code-picker",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/country-code-picker within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/waiting-list",
+      "file": "app/(unauthenticated)/(modal)/waiting-list/index.tsx",
+      "href": "/waiting-list",
+      "skipped": null,
+      "findingsFile": "waiting-list/findings.json",
+      "top": [
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 435,
+          "severity": "high",
+          "symbol": "Screen"
+        },
+        {
+          "kind": "render-fanout",
+          "metric": "componentsPerCommit",
+          "value": 281,
+          "severity": "high",
+          "symbol": "HomeScreen"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ForwardRef(RemapPropsComponent) via TimelineDragProvider"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 6,
+          "severity": "low",
+          "symbol": "ScrollView"
+        },
+        {
+          "kind": "wasted-render",
+          "metric": "avoidableRenders",
+          "value": 5,
+          "severity": "low",
+          "symbol": "TabsScreen via Screen"
+        }
+      ]
+    },
+    {
+      "path": "/challenge/[slug]/1-welcome",
+      "file": "app/(unauthenticated)/challenge/[slug]/1-welcome.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/2-campus",
+      "file": "app/(unauthenticated)/challenge/[slug]/2-campus.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/3-verify-email",
+      "file": "app/(unauthenticated)/challenge/[slug]/3-verify-email.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/4-referrer",
+      "file": "app/(unauthenticated)/challenge/[slug]/4-referrer.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/5-group",
+      "file": "app/(unauthenticated)/challenge/[slug]/5-group.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/6-idea",
+      "file": "app/(unauthenticated)/challenge/[slug]/6-idea.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/7-activity",
+      "file": "app/(unauthenticated)/challenge/[slug]/7-activity.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/8-invite",
+      "file": "app/(unauthenticated)/challenge/[slug]/8-invite.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/9-joined",
+      "file": "app/(unauthenticated)/challenge/[slug]/9-joined.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]",
+      "file": "app/(unauthenticated)/challenge/[slug]/index.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/challenge/[slug]/referrer-search",
+      "file": "app/(unauthenticated)/challenge/[slug]/referrer-search.tsx",
+      "href": null,
+      "skipped": "needs params: slug"
+    },
+    {
+      "path": "/onboarding/1-phone-number",
+      "file": "app/(unauthenticated)/onboarding/1-phone-number.tsx",
+      "href": "/onboarding/1-phone-number",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/1-phone-number within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/2-invitation-code",
+      "file": "app/(unauthenticated)/onboarding/2-invitation-code.tsx",
+      "href": "/onboarding/2-invitation-code",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/2-invitation-code within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/3-phone-code-verification",
+      "file": "app/(unauthenticated)/onboarding/3-phone-code-verification.tsx",
+      "href": "/onboarding/3-phone-code-verification",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/3-phone-code-verification within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/4-profile",
+      "file": "app/(unauthenticated)/onboarding/4-profile.tsx",
+      "href": "/onboarding/4-profile",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/4-profile within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/5-friends",
+      "file": "app/(unauthenticated)/onboarding/5-friends.tsx",
+      "href": "/onboarding/5-friends",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/5-friends within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/6-expo-update",
+      "file": "app/(unauthenticated)/onboarding/6-expo-update.tsx",
+      "href": "/onboarding/6-expo-update",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/6-expo-update within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/carousel",
+      "file": "app/(unauthenticated)/onboarding/carousel.tsx",
+      "href": "/onboarding/carousel",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/carousel within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/onboarding/components/FriendsSuggestionsSkeleton",
+      "file": "app/(unauthenticated)/onboarding/components/FriendsSuggestionsSkeleton.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/onboarding/components/OnboardingHeader",
+      "file": "app/(unauthenticated)/onboarding/components/OnboardingHeader.tsx",
+      "href": null,
+      "skipped": "component or hook file, not a screen"
+    },
+    {
+      "path": "/onboarding/welcome",
+      "file": "app/(unauthenticated)/onboarding/welcome.tsx",
+      "href": "/onboarding/welcome",
+      "skipped": null,
+      "error": "Route did not reach /onboarding/welcome within 15000 ms (last: /timelines)"
+    },
+    {
+      "path": "/[singular_app_id]/[link_id]",
+      "file": "app/[singular_app_id]/[link_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: singular_app_id, link_id"
+    },
+    {
+      "path": "/",
+      "file": "app/index.tsx",
+      "href": "/",
+      "skipped": null,
+      "error": "Line must be greater than or equal to 1, got 0"
+    },
+    {
+      "path": "/invite",
+      "file": "app/invite/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/mymeli.sng.link/[singular_app_id]/[link_id]",
+      "file": "app/mymeli.sng.link/[singular_app_id]/[link_id]/index.tsx",
+      "href": null,
+      "skipped": "needs params: singular_app_id, link_id"
+    },
+    {
+      "path": "/profile",
+      "file": "app/profile/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/shareintent",
+      "file": "app/shareintent.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    },
+    {
+      "path": "/timeline",
+      "file": "app/timeline/index.tsx",
+      "href": null,
+      "skipped": "excluded by config"
+    }
+  ],
+  "compiler": {
+    "bailouts": 9,
+    "compiled": 1688,
+    "errors": 0,
+    "file": "compiler-bailouts.json"
+  },
+  "startup": {
+    "findingsFile": "startup/findings.json",
+    "modulesInitialized": 7826,
+    "readyMs": 21292
+  }
+}

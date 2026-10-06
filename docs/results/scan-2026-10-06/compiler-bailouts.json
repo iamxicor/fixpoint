@@ -1,0 +1,79 @@
+{
+  "bailouts": [
+    {
+      "file": "components/camera/collage-mode.tsx",
+      "line": 206,
+      "column": 2,
+      "fn": "CollagePreview",
+      "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+      "detail": "Found React rule suppression"
+    },
+    {
+      "file": "components/camera/collage-mode.tsx",
+      "line": 374,
+      "column": 0,
+      "fn": "SlotControls",
+      "reason": "This value cannot be modified",
+      "detail": "`dragIndex` cannot be modified"
+    },
+    {
+      "file": "components/camera/vision-camera-with-gallery.tsx",
+      "line": 302,
+      "column": 7,
+      "fn": "VisionCameraWithGallery",
+      "reason": "Cannot access refs during render",
+      "detail": "Cannot update ref during render"
+    },
+    {
+      "file": "components/pages/timeline/legacy-timeline-redirect.tsx",
+      "line": 59,
+      "column": 7,
+      "fn": "LegacyTimelineRedirect",
+      "reason": "React Compiler has skipped optimizing this component because one or more React ESLint rules were disabled",
+      "detail": "Found React rule suppression"
+    },
+    {
+      "file": "components/tabs/tab-flatlist.tsx",
+      "line": 51,
+      "column": 7,
+      "fn": "TabFlatList",
+      "reason": "This value cannot be modified",
+      "detail": "`isListGliding` cannot be modified"
+    },
+    {
+      "file": "components/tabs/tab-scrollview.tsx",
+      "line": 54,
+      "column": 7,
+      "fn": "TabScrollView",
+      "reason": "This value cannot be modified",
+      "detail": "`isListGliding` cannot be modified"
+    },
+    {
+      "file": "components/tabs/tabs-header-wrapper.tsx",
+      "line": 12,
+      "column": 7,
+      "fn": "TabsHeaderWrapper",
+      "reason": "Cannot access refs during render",
+      "detail": "Passing a ref to a function may read its value during render"
+    },
+    {
+      "file": "components/tabs/tabs-provider.tsx",
+      "line": 77,
+      "column": 7,
+      "fn": "TabsProvider",
+      "reason": "Cannot access refs during render",
+      "detail": "Cannot access ref value during render"
+    },
+    {
+      "file": "components/timeline-grouping/DraggableEntry.tsx",
+      "line": 141,
+      "column": 7,
+      "fn": "DraggableEntry",
+      "reason": "This value cannot be modified",
+      "detail": "`scale` cannot be modified"
+    }
+  ],
+  "compiled": 1688,
+  "errors": [],
+  "generatedAt": "2026-10-06T11:32:39.491Z"
+}
