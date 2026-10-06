@@ -1,7 +1,7 @@
-import { DevToolsClient, listTargets, parseTargetId, pickTarget, type InspectorTarget, type RouteInfo, type StartupTiming, type TraceFile } from '@fixpoint/devtools';
+import { DevToolsClient, listTargets, pickTarget, type InspectorTarget, type RouteInfo, type StartupTiming, type TraceFile } from '@fixpoint/devtools';
 import type { ScenarioStep } from './config.js';
 import { devClientUrl } from './metro.js';
-import { appPid, idbAvailable, idbSwipe, idbTap, openUrl, screenshot as simScreenshot, terminateApp, type SimDevice } from './simulator.js';
+import { appPid, idbAvailable, idbSwipe, idbTap, launchApp, openUrl, screenshot as simScreenshot, setDevClientLastOpened, terminateApp, type SimDevice } from './simulator.js';
 import type { InteractionMode } from './config.js';
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -56,34 +56,37 @@ export class AppSession {
    * Cold start: terminate, open the dev-client deep link to `metroUrl`, wait for a new inspector page,
    * connect, wait for Expo Router to be ready, and capture the startup state at that moment.
    */
-  static async coldStart(opts: SessionOptions & { timeoutMs?: number; captureStartup?: boolean }): Promise<AppSession> {
+  /**
+   * Cold start with exactly one React Native host: terminate, make `metroUrl` the dev launcher's
+   * most recent app, plain-launch, wait for the inspector page, connect, wait for Expo Router.
+   * Falls back to the dev-client deep link (which registers the URL) followed by a second plain
+   * launch when the registry cannot be written.
+   */
+  static async coldStart(opts: SessionOptions & { timeoutMs?: number; captureStartup?: boolean; strategy?: 'launch' | 'openurl' }): Promise<AppSession> {
     const log = opts.log ?? (() => undefined);
-    const before = await listTargets(opts.metroUrl).catch(() => [] as InspectorTarget[]);
-    const prevPages = new Map<string, number>();
-    for (const t of before) {
-      const { device, page } = parseTargetId(t.id);
-      prevPages.set(device, Math.max(prevPages.get(device) ?? 0, page));
-    }
-    terminateApp(opts.device.udid, opts.bundleId);
-    await sleep(700);
-    const t0 = Date.now();
-    openUrl(opts.device.udid, devClientUrl(opts.scheme, opts.metroUrl));
-    log(`cold start → ${opts.metroUrl}`);
     const timeout = opts.timeoutMs ?? 120_000;
-    let target: InspectorTarget | undefined;
-    while (Date.now() - t0 < timeout) {
-      const targets = await listTargets(opts.metroUrl).catch(() => [] as InspectorTarget[]);
-      const candidate = pickTarget(targets, { deviceName: opts.device.name, appId: opts.bundleId });
-      if (candidate) {
-        const { device, page } = parseTargetId(candidate.id);
-        if (!prevPages.has(device) || page > (prevPages.get(device) ?? 0)) {
-          target = candidate;
-          break;
-        }
-      }
-      await sleep(400);
+    const strategy = opts.strategy ?? 'launch';
+    const t0 = Date.now();
+    terminateApp(opts.device.udid, opts.bundleId);
+    await waitForNoTarget(opts, 10_000);
+    let launched = false;
+    if (strategy === 'launch' && setDevClientLastOpened(opts.device.udid, opts.bundleId, opts.metroUrl)) {
+      launchApp(opts.device.udid, opts.bundleId);
+      launched = true;
+      log(`cold start (launch) → ${opts.metroUrl}`);
     }
-    if (!target) throw new Error(`App did not register a new inspector page on ${opts.metroUrl} within ${timeout} ms`);
+    if (!launched) {
+      // deep link registers the URL as most recent, then a plain launch gives a single-host process
+      openUrl(opts.device.udid, devClientUrl(opts.scheme, opts.metroUrl));
+      log(`cold start (deep link) → ${opts.metroUrl}`);
+      await waitForTarget(opts, 60_000);
+      await sleep(1_500);
+      terminateApp(opts.device.udid, opts.bundleId);
+      await waitForNoTarget(opts, 10_000);
+      launchApp(opts.device.udid, opts.bundleId);
+      log('relaunched for a single-host process');
+    }
+    const target = await waitForTarget(opts, timeout - (Date.now() - t0));
     let client: DevToolsClient | null = null;
     let lastErr: unknown;
     while (!client && Date.now() - t0 < timeout) {
@@ -229,6 +232,26 @@ export class AppSession {
     });
     trace.metadata = { ...(trace.metadata ?? {}), marks, label: opts.label, pid: this.pid, metroUrl: this.opts.metroUrl, device: this.opts.device.name };
     return { trace, marks };
+  }
+}
+
+async function waitForTarget(opts: SessionOptions, timeoutMs: number): Promise<InspectorTarget> {
+  const t0 = Date.now();
+  while (Date.now() - t0 < timeoutMs) {
+    const targets = await listTargets(opts.metroUrl).catch(() => [] as InspectorTarget[]);
+    const candidate = pickTarget(targets, { deviceName: opts.device.name, appId: opts.bundleId });
+    if (candidate) return candidate;
+    await sleep(400);
+  }
+  throw new Error(`App did not register an inspector page on ${opts.metroUrl} within ${timeoutMs} ms`);
+}
+
+async function waitForNoTarget(opts: SessionOptions, timeoutMs: number): Promise<void> {
+  const t0 = Date.now();
+  while (Date.now() - t0 < timeoutMs) {
+    const targets = await listTargets(opts.metroUrl).catch(() => [] as InspectorTarget[]);
+    if (!pickTarget(targets, { deviceName: opts.device.name, appId: opts.bundleId })) return;
+    await sleep(300);
   }
 }
 

@@ -1,0 +1,12 @@
+import { AppSession, resolveDevice } from '../packages/harness/dist/index.js';
+const device = resolveDevice('iPhone 17');
+const t0 = Date.now();
+const s = await AppSession.coldStart({ device, bundleId: 'com.mymeli.mobile', scheme: 'mymeli', metroUrl: process.argv[2] ?? 'http://127.0.0.1:8091', log: (m) => console.log(new Date().toISOString().slice(11, 19), m) });
+console.log('startup modules', s.startup.modulesInitialized.length, 'readyMs', s.startup.readyMs, 'pid', s.pid);
+const trace = await s.client.tracing.record({ durationMs: 300 });
+console.log('tracing probe events:', trace.traceEvents.length, 'total', Date.now() - t0, 'ms');
+console.log('route', (await s.routeInfo()).pathname);
+await s.navigate('/notifications'); console.log('→', (await s.routeInfo()).pathname);
+console.log('scroll', await s.scroll('down', 600));
+await s.back(); console.log('back →', (await s.routeInfo()).pathname);
+s.close();

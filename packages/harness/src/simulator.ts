@@ -109,6 +109,68 @@ export function startVideo(udid: string, file: string, opts: { codec?: 'h264' | 
   };
 }
 
+/** Path of the app's data container inside the simulator. */
+export function appDataContainer(udid: string, bundleId: string): string | null {
+  try {
+    return simctl(['get_app_container', udid, bundleId, 'data']).trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+export interface DevClientRegistryEntry {
+  url: string;
+  timestamp: number;
+  isEASUpdate: boolean;
+  name?: string;
+}
+
+const DEV_CLIENT_REGISTRY_KEY = 'expo.devlauncher.recentlyopenedapps';
+
+function prefsPlist(udid: string, bundleId: string): string | null {
+  const c = appDataContainer(udid, bundleId);
+  return c ? `${c}/Library/Preferences/${bundleId}.plist` : null;
+}
+
+/** expo-dev-launcher's "recently opened apps" registry from the app's UserDefaults. */
+export function devClientRegistry(udid: string, bundleId: string): Record<string, DevClientRegistryEntry> {
+  const plist = prefsPlist(udid, bundleId);
+  if (!plist || !existsSync(plist)) return {};
+  try {
+    const json = execFileSync('plutil', ['-convert', 'json', '-o', '-', plist], { encoding: 'utf8' });
+    const all = JSON.parse(json) as Record<string, unknown>;
+    return (all[DEV_CLIENT_REGISTRY_KEY] as Record<string, DevClientRegistryEntry>) ?? {};
+  } catch {
+    return {};
+  }
+}
+
+const xmlEscape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/**
+ * Makes `metroUrl` the dev launcher's most recently opened app, so a plain `simctl launch` (no URL)
+ * loads it directly as the only React Native host. Launching through the deep link instead creates
+ * the launcher host first and the app host second, and the Tracing domain refuses to run with two
+ * hosts registered. The app must be terminated when this runs.
+ */
+export function setDevClientLastOpened(udid: string, bundleId: string, metroUrl: string, name?: string): boolean {
+  const plist = prefsPlist(udid, bundleId);
+  if (!plist) return false;
+  const registry = devClientRegistry(udid, bundleId);
+  const existingName = name ?? Object.values(registry).find((e) => e.name)?.name;
+  registry[metroUrl] = { url: metroUrl, timestamp: Date.now(), isEASUpdate: false, ...(existingName ? { name: existingName } : {}) };
+  // older entries keep their timestamps; only the target becomes the most recent
+  const entries = Object.entries(registry)
+    .map(([key, e]) => `<key>${xmlEscape(key)}</key><dict><key>isEASUpdate</key>${e.isEASUpdate ? '<true/>' : '<false/>'}${e.name ? `<key>name</key><string>${xmlEscape(e.name)}</string>` : ''}<key>timestamp</key><integer>${Math.floor(e.timestamp)}</integer><key>url</key><string>${xmlEscape(e.url)}</string></dict>`)
+    .join('');
+  try {
+    simctl(['spawn', udid, 'defaults', 'write', plist, DEV_CLIENT_REGISTRY_KEY, `<dict>${entries}</dict>`]);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /** Device point size from the simulator's screen (used for swipe coordinates). */
 export function screenPoints(udid: string): { width: number; height: number } | null {
   try {
