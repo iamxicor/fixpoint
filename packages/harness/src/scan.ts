@@ -20,6 +20,8 @@ export interface ScanOptions {
   skipStartup?: boolean;
   /** Skip the React Compiler pass. */
   skipCompiler?: boolean;
+  /** Keep routes that already have findings in the existing index and only scan the rest. */
+  resume?: boolean;
 }
 
 export interface RouteScanResult {
@@ -49,13 +51,20 @@ export async function scanApp(opts: ScanOptions): Promise<ScanIndex> {
   const device = resolveDevice(cfg.simulator);
   const metroUrl = cfg.metroUrl ?? `http://localhost:${cfg.metroPort}`;
   const routes = discoverRoutes(cfg.appRoot, cfg);
-  const wanted = routes.filter((r) => r.href && (!opts.only?.length || opts.only.includes(r.path) || opts.only.includes(r.href!)));
-  log(`${routes.length} routes discovered, ${wanted.length} to scan, ${routes.filter((r) => r.skipped).length} skipped`);
+  const previous = opts.resume ? readScanIndex(outDir) : null;
+  const done = new Set((previous?.routes ?? []).filter((r) => r.findingsFile && existsSync(r.findingsFile)).map((r) => r.path));
+  const wanted = routes.filter((r) => r.href && !done.has(r.path) && (!opts.only?.length || opts.only.includes(r.path) || opts.only.includes(r.href!)));
+  log(`${routes.length} routes discovered, ${wanted.length} to scan, ${routes.filter((r) => r.skipped).length} skipped${done.size ? `, ${done.size} kept from the previous scan` : ''}`);
 
   const componentLocations = indexComponents(cfg.appRoot);
   log(`indexed ${Object.keys(componentLocations).length} component declarations`);
   let compiler: { bailouts: CompilerBailout[] } | undefined;
   let compilerSummary: ScanIndex['compiler'];
+  if (opts.skipCompiler && existsSync(join(outDir, 'compiler-bailouts.json'))) {
+    const prev = JSON.parse(readFileSync(join(outDir, 'compiler-bailouts.json'), 'utf8'));
+    compiler = { bailouts: prev.bailouts ?? [] };
+    compilerSummary = previous?.compiler;
+  }
   if (!opts.skipCompiler) {
     const t0 = Date.now();
     const res = collectCompilerBailouts(cfg.appRoot);
@@ -69,11 +78,11 @@ export async function scanApp(opts: ScanOptions): Promise<ScanIndex> {
   const symbolicator = new Symbolicator(fetchMapLoader(), { rootDir: cfg.appRoot });
   const symbolicate = (frames: CallFrame[]) => symbolicator.frames(frames);
   const sessionOpts: SessionOptions = { device, bundleId: cfg.bundleId, scheme: cfg.scheme, metroUrl, interactions: cfg.interactions, log };
-  const index: ScanIndex = { generatedAt: new Date().toISOString(), metroUrl, device: device.name, routes: routes.map((r) => ({ path: r.path, file: r.file, href: r.href, skipped: r.skipped })), compiler: compilerSummary };
+  const index: ScanIndex = { generatedAt: new Date().toISOString(), metroUrl, device: device.name, routes: routes.map((r) => previous?.routes.find((p) => p.path === r.path && done.has(r.path)) ?? { path: r.path, file: r.file, href: r.href, skipped: r.skipped }), compiler: compilerSummary, startup: previous?.startup };
 
   // startup: cold start, capture modules + timing at first-route-ready
   let session: AppSession;
-  if (!opts.skipStartup) {
+  if (!opts.skipStartup && !(opts.resume && previous?.startup)) {
     session = await AppSession.coldStart({ ...sessionOpts, captureStartup: true });
     const s = session.startup!;
     const startupDir = join(outDir, 'startup');

@@ -178,22 +178,31 @@ export class DevToolsClient {
           if (Array.isArray(value)) events.push(...value);
         }
       });
+      let started = false;
       try {
         await this.cdp.send('Debugger.disable').catch(() => undefined);
         const categories = (opts.categories ?? [...TRACE_CATEGORIES]).join(',');
         await this.cdp.send('Tracing.start', { categories, options: 'sampling-frequency=10000', transferMode: 'ReportEvents' });
-        const started = Date.now();
+        started = true;
+        const startedAt = Date.now();
         if ('durationMs' in opts) await sleep(opts.durationMs);
         else await opts.until();
         const complete = this.cdp.waitFor('Tracing.tracingComplete', 120_000);
         await this.cdp.send('Tracing.end');
+        started = false;
         const done = await complete;
         return {
           traceEvents: events,
-          metadata: { source: 'fixpoint', chunks, dataLossOccurred: !!done?.dataLossOccurred, wallMs: Date.now() - started, target: this.target.id },
+          metadata: { source: 'fixpoint', chunks, dataLossOccurred: !!done?.dataLossOccurred, wallMs: Date.now() - startedAt, target: this.target.id },
         };
       } finally {
         off();
+        // a scenario that throws must not leave the recording running: the next Tracing.start would fail
+        if (started) {
+          const complete = this.cdp.waitFor('Tracing.tracingComplete', 30_000).catch(() => undefined);
+          await this.cdp.send('Tracing.end').catch(() => undefined);
+          await complete;
+        }
       }
     },
   };

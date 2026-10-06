@@ -16,11 +16,12 @@ export function registerRun(program: Command): void {
     .option('--skip-startup', 'do not cold-start for the startup capture')
     .option('--skip-compiler', 'do not run the React Compiler pass')
     .option('--metro <url>', 'Metro URL to use instead of the configured one')
+    .option('--resume', 'keep routes already scanned and only record the rest')
     .option('--json', 'print the scan index as JSON')
     .action(async (route: string | undefined, opts) => {
       const { config } = await loadConfig(resolve(opts.dir));
       if (opts.metro) config.metroUrl = opts.metro;
-      const index = await scanApp({ config, only: route ? [route] : undefined, log, skipStartup: !!opts.skipStartup, skipCompiler: !!opts.skipCompiler });
+      const index = await scanApp({ config, only: route ? [route] : undefined, log, skipStartup: !!opts.skipStartup, skipCompiler: !!opts.skipCompiler, resume: !!opts.resume });
       if (opts.json) return void process.stdout.write(JSON.stringify(index, null, 2) + '\n');
       for (const r of index.routes) {
         if (!r.findingsFile) continue;
