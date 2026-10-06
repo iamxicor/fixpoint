@@ -1,0 +1,116 @@
+[
+  {
+    "dir": ">",
+    "id": 1,
+    "method": "Runtime.enable",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 1,
+    "method": "Runtime.enable",
+    "result": {}
+  },
+  {
+    "dir": ">",
+    "id": 2,
+    "method": "Debugger.enable",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 2,
+    "method": "Debugger.enable",
+    "result": {}
+  },
+  {
+    "dir": ">",
+    "id": 3,
+    "method": "Debugger.disable",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 3,
+    "method": "Debugger.disable",
+    "result": {}
+  },
+  {
+    "dir": ">",
+    "id": 4,
+    "method": "Tracing.start",
+    "params": {
+      "categories": "-*,devtools.timeline,disabled-by-default-devtools.timeline,blink.user_timing,v8.execute,disabled-by-default-v8.cpu_profiler,disabled-by-default-devtools.timeline.frame",
+      "options": "sampling-frequency=10000",
+      "transferMode": "ReportEvents"
+    }
+  },
+  {
+    "dir": "<",
+    "id": 4,
+    "method": "Tracing.start",
+    "result": {}
+  },
+  {
+    "dir": ">",
+    "id": 5,
+    "method": "Tracing.end",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 5,
+    "method": "Tracing.end",
+    "result": {}
+  },
+  {
+    "dir": ">",
+    "id": 6,
+    "method": "Profiler.enable",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 6,
+    "method": "Profiler.enable",
+    "result": {
+      "code": -32601,
+      "message": "Unsupported method 'Profiler.enable'"
+    }
+  },
+  {
+    "dir": ">",
+    "id": 7,
+    "method": "HeapProfiler.enable",
+    "params": {}
+  },
+  {
+    "dir": "<",
+    "id": 7,
+    "method": "HeapProfiler.enable",
+    "result": {
+      "code": -32601,
+      "message": "Unsupported method 'HeapProfiler.enable'"
+    }
+  },
+  {
+    "dir": ">",
+    "id": 8,
+    "method": "Runtime.evaluate",
+    "params": {
+      "expression": "(function(){\n      var st = (typeof performance !== 'undefined' && performance.rnStartupTiming) || null;\n      var s = st ? { startTime: st.startTime, endTime: st.endTime, initializeRuntimeStart: st.initializeRuntimeStart, initializeRuntimeEnd: st.initializeRuntimeEnd, executeJavaScriptBundleEntryPointStart: st.executeJavaScriptBundleEntryPointStart, executeJavaScriptBundleEntryPointEnd: st.executeJavaScriptBundleEntryPointEnd } : null;\n      return JSON.stringify({\n        hermes: typeof HermesInternal !== 'undefined' ? (HermesInternal.getRuntimeProperties ? HermesInternal.getRuntimeProperties() : true) : false,\n        consoleTimeStamp: typeof console.timeStamp,\n        performanceMeasure: typeof performance !== 'undefined' ? typeof performance.measure : 'no-performance',\n        rnStartupTiming: s,\n        memory: (typeof performance !== 'undefined' && performance.memory) ? { jsHeapSizeLimit: performance.memory.jsHeapSizeLimit, totalJSHeapSize: performance.memory.totalJSHeapSize, usedJSHeapSize: performance.memory.usedJSHeapSize } : null,\n        reactDevToolsHook: typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' ? Object.keys(__REACT_DEVTOOLS_GLOBAL_HOOK__).slice(0,25) : null,\n        dev: typeof __DEV__ !== 'undefined' ? __DEV__ : null,\n        bridgeless: typeof globalThis.RN$Bridgeless !== 'undefined' ? globalThis.RN$Bridgeless : null,\n        requireKeys: typeof __r === 'function' ? Object.keys(__r).slice(0,10) : null\n      });\n    })()",
+      "returnByValue": true
+    }
+  },
+  {
+    "dir": "<",
+    "id": 8,
+    "method": "Runtime.evaluate",
+    "result": {
+      "result": {
+        "type": "string",
+        "value": "{\"hermes\":{\"Bytecode Version\":98,\"Static Hermes\":true,\"Builtins Frozen\":false,\"VM Experiments\":0,\"Build\":\"Release\",\"GC\":\"hades (concurrent)\",\"OSS Release Version\":\"250829098.0.10\",\"Debugger Enabled\":true,\"CommonJS Modules\":\"None\"},\"consoleTimeStamp\":\"function\",\"performanceMeasure\":\"function\",\"rnStartupTiming\":{\"startTime\":8283957.661875001,\"endTime\":8284610.605958334,\"initializeRuntimeStart\":8283957.661541668,\"executeJavaScriptBundleEntryPointStart\":8283957.6564166695},\"memory\":{\"jsHeapSizeLimit\":null,\"totalJSHeapSize\":134217728,\"usedJSHeapSize\":113670352},\"reactDevToolsHook\":[\"rendererInterfaces\",\"listeners\",\"backends\",\"renderers\",\"hasUnsupportedRendererAttached\",\"emit\",\"getFiberRoots\",\"inject\",\"on\",\"off\",\"sub\",\"supportsFiber\",\"supportsFlight\",\"checkDCE\",\"onCommitFiberUnmount\",\"onCommitFiberRoot\",\"onPostCommitFiberRoot\",\"setStrictMode\",\"getInternalModuleRanges\",\"registerInternalModuleStart\",\"registerInternalModuleStop\",\"settings\",\"onScheduleFiberRoot\",\"resolveRNStyle\",\"nativeStyleEditorValidAttributes\"],\"dev\":true,\"bridgeless\":true,\"requireKeys\":[\"importDefault\",\"importAll\",\"context\",\"resolveWeak\",\"unguarded\",\"unpackModuleId\",\"packModuleId\",\"Systrace\",\"getModules\"]}"
+      }
+    }
+  }
+]

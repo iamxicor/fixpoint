@@ -1,0 +1,48 @@
+{
+  "/json": {
+    "status": 200,
+    "body": [
+      {
+        "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+        "title": "com.mymeli.mobile (iPhone 17)",
+        "description": "React Native Bridgeless [C++ connection]",
+        "appId": "com.mymeli.mobile",
+        "type": "node",
+        "devtoolsFrontendUrl": "/debugger-frontend/rn_fusebox.html?ws=localhost%3A8081%2Finspector%2Fdebug%3Fdevice%3D2610c661bf1bc785358b7d25898d16f209bc4889%26page%3D1&sources.hide_add_folder=true&unstable_enableNetworkPanel=true",
+        "webSocketDebuggerUrl": "ws://localhost:8081/inspector/debug?device=2610c661bf1bc785358b7d25898d16f209bc4889&page=1",
+        "deviceName": "iPhone 17",
+        "reactNative": {
+          "logicalDeviceId": "2610c661bf1bc785358b7d25898d16f209bc4889",
+          "capabilities": {
+            "supportsMultipleDebuggers": true,
+            "nativeSourceCodeFetching": false,
+            "nativePageReloads": true
+          }
+        }
+      }
+    ]
+  },
+  "/json/list": {
+    "status": 200,
+    "body": [
+      {
+        "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+        "title": "com.mymeli.mobile (iPhone 17)",
+        "description": "React Native Bridgeless [C++ connection]",
+        "appId": "com.mymeli.mobile",
+        "type": "node",
+        "devtoolsFrontendUrl": "/debugger-frontend/rn_fusebox.html?ws=localhost%3A8081%2Finspector%2Fdebug%3Fdevice%3D2610c661bf1bc785358b7d25898d16f209bc4889%26page%3D1&sources.hide_add_folder=true&unstable_enableNetworkPanel=true",
+        "webSocketDebuggerUrl": "ws://localhost:8081/inspector/debug?device=2610c661bf1bc785358b7d25898d16f209bc4889&page=1",
+        "deviceName": "iPhone 17",
+        "reactNative": {
+          "logicalDeviceId": "2610c661bf1bc785358b7d25898d16f209bc4889",
+          "capabilities": {
+            "supportsMultipleDebuggers": true,
+            "nativeSourceCodeFetching": false,
+            "nativePageReloads": true
+          }
+        }
+      }
+    ]
+  }
+}

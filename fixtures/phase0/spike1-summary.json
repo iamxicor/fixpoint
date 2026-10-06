@@ -1,0 +1,404 @@
+{
+  "metro": "http://localhost:8081",
+  "deeplink": "mymeli://notifications",
+  "startedAt": "2026-10-06T10:04:42.287Z",
+  "steps": {
+    "listTargets": {
+      "endpoints": {
+        "/json": 200,
+        "/json/list": 200
+      },
+      "count": 2,
+      "picked": {
+        "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+        "title": "com.mymeli.mobile (iPhone 17)",
+        "description": "React Native Bridgeless [C++ connection]",
+        "ws": "ws://localhost:8081/inspector/debug?device=2610c661bf1bc785358b7d25898d16f209bc4889&page=1",
+        "capabilities": {
+          "supportsMultipleDebuggers": true,
+          "nativeSourceCodeFetching": false,
+          "nativePageReloads": true
+        }
+      }
+    },
+    "connect": {
+      "url": "ws://localhost:8081/inspector/debug?device=2610c661bf1bc785358b7d25898d16f209bc4889&page=1"
+    },
+    "Runtime.enable": {
+      "ok": true
+    },
+    "Debugger.enable": {
+      "ok": true,
+      "scriptsParsed": 30,
+      "sample": [
+        {
+          "scriptId": "2",
+          "url": ""
+        },
+        {
+          "scriptId": "3",
+          "url": ""
+        },
+        {
+          "scriptId": "4",
+          "url": ""
+        }
+      ]
+    },
+    "sourceMapFetch": {
+      "ok": true,
+      "found": true,
+      "url": "http://localhost:8081/node_modules/expo-router/entry.map?platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+      "status": 200,
+      "bytes": 59495662,
+      "ms": 3063,
+      "version": 3,
+      "sources": 7507,
+      "names": 70373,
+      "x_facebook_sources": true,
+      "sampleSources": [
+        "/Users/himanshukushwah/Documents/GitHub/mobile/app/(authenticated)/(modal)/camera/_layout.tsx",
+        "/Users/himanshukushwah/Documents/GitHub/mobile/app/(authenticated)/(modal)/camera/index.tsx",
+        "/Users/himanshukushwah/Documents/GitHub/mobile/app/(authenticated)/(modal)/challenges/reward/leaderboard.tsx"
+      ]
+    },
+    "Debugger.disable": {
+      "ok": true
+    },
+    "Tracing.start": {
+      "ok": true
+    },
+    "Tracing.end": {
+      "ok": true
+    },
+    "Tracing.tracingComplete": {
+      "ok": true,
+      "params": {
+        "dataLossOccurred": false
+      },
+      "chunks": 24,
+      "events": 275,
+      "wallMs": 3022
+    },
+    "traceAnalysis": {
+      "byCat": {
+        "devtools.timeline": 45,
+        "blink.user_timing": 8,
+        "disabled-by-default-devtools.timeline": 2,
+        "disabled-by-default-v8.cpu_profiler": 220
+      },
+      "topNames": [
+        [
+          "ProfileChunk",
+          219
+        ],
+        [
+          "TimeStamp",
+          45
+        ],
+        [
+          "Update",
+          8
+        ],
+        [
+          "TracingStartedInPage",
+          1
+        ],
+        [
+          "ReactNative-TracingStopped",
+          1
+        ],
+        [
+          "Profile",
+          1
+        ]
+      ],
+      "tracks": {
+        "Blocking": 20,
+        "Transition": 4,
+        "Suspense": 4,
+        "Idle": 4,
+        "Components ⚛": 13
+      },
+      "trackGroups": {
+        "Scheduler ⚛": 32
+      },
+      "userTimingTop": [
+        [
+          "Update",
+          4
+        ]
+      ],
+      "profiles": 1,
+      "profileChunks": 219,
+      "samples": 21276,
+      "metadataSample": []
+    },
+    "assertReactTracks": {
+      "componentsTrack": "Components ⚛",
+      "schedulerGroup": "Scheduler ⚛",
+      "componentsTrackPresent": true,
+      "schedulerGroupPresent": true,
+      "samplingProfilePresent": true,
+      "componentSample": [
+        {
+          "track": "Components ⚛",
+          "start": 4,
+          "end": 4,
+          "name": "ReactNative-ComponentsTrack"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "track": "Components ⚛",
+          "start": 9481603752,
+          "end": 9481603951,
+          "message": "ProfileShopMenuOption",
+          "name": "ProfileShopMenuOption"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "secondary-light",
+          "track": "Components ⚛",
+          "start": 9481605359,
+          "end": 9481605876,
+          "message": "ProfileShopMenuOption",
+          "name": "ProfileShopMenuOption"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "secondary-light",
+          "track": "Components ⚛",
+          "start": 9482423508,
+          "end": 9482423796,
+          "message": "ShareIntentProvider",
+          "name": "ShareIntentProvider"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "track": "Components ⚛",
+          "start": 9482406144,
+          "end": 9482422420,
+          "message": "RootLayout(./_layout.tsx)",
+          "name": "RootLayout(./_layout.tsx)"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "track": "Components ⚛",
+          "start": 9482406491,
+          "end": 9482422328,
+          "message": "ShareIntentProvider",
+          "name": "ShareIntentProvider"
+        }
+      ],
+      "schedulerSample": [
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Blocking",
+          "start": 3,
+          "end": 3,
+          "message": "Blocking Track",
+          "name": "Blocking Track"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Transition",
+          "start": 3,
+          "end": 3,
+          "message": "Transition Track",
+          "name": "Transition Track"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Suspense",
+          "start": 3,
+          "end": 3,
+          "message": "Suspense Track",
+          "name": "Suspense Track"
+        },
+        {
+          "rnStackTrace": null,
+          "color": "primary-light",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Idle",
+          "start": 3,
+          "end": 3,
+          "message": "Idle Track",
+          "name": "Idle Track"
+        },
+        {
+          "rnStackTrace": {
+            "description": "setState()",
+            "callFrames": [
+              {
+                "columnNumber": 41,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 68070,
+                "scriptId": "6",
+                "functionName": "startUpdateTimerByLane"
+              },
+              {
+                "columnNumber": 84,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 70054,
+                "scriptId": "6",
+                "functionName": "dispatchSetState"
+              },
+              {
+                "columnNumber": 24,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 821447,
+                "scriptId": "6",
+                "functionName": "tick"
+              }
+            ]
+          },
+          "color": "primary-dark",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Blocking",
+          "start": 9481602063,
+          "end": 9481604571,
+          "message": "Render",
+          "name": "Render"
+        },
+        {
+          "rnStackTrace": {
+            "description": "setState()",
+            "callFrames": [
+              {
+                "columnNumber": 41,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 68070,
+                "scriptId": "6",
+                "functionName": "startUpdateTimerByLane"
+              },
+              {
+                "columnNumber": 84,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 70054,
+                "scriptId": "6",
+                "functionName": "dispatchSetState"
+              },
+              {
+                "columnNumber": 24,
+                "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable",
+                "lineNumber": 821447,
+                "scriptId": "6",
+                "functionName": "tick"
+              }
+            ]
+          },
+          "color": "secondary-dark",
+          "trackGroup": "Scheduler ⚛",
+          "track": "Blocking",
+          "start": 9481604571,
+          "end": 9481604608,
+          "message": "Commit",
+          "name": "Commit"
+        }
+      ]
+    },
+    "Profiler": {
+      "ok": false,
+      "error": "Profiler.enable: Unsupported method 'Profiler.enable'",
+      "cdp": {
+        "code": -32601,
+        "message": "Unsupported method 'Profiler.enable'"
+      }
+    },
+    "HeapProfiler.takeHeapSnapshot": {
+      "ok": false,
+      "error": "HeapProfiler.enable: Unsupported method 'HeapProfiler.enable'",
+      "cdp": {
+        "code": -32601,
+        "message": "Unsupported method 'HeapProfiler.enable'"
+      }
+    },
+    "Runtime.evaluate": {
+      "ok": true,
+      "value": {
+        "hermes": {
+          "Bytecode Version": 98,
+          "Static Hermes": true,
+          "Builtins Frozen": false,
+          "VM Experiments": 0,
+          "Build": "Release",
+          "GC": "hades (concurrent)",
+          "OSS Release Version": "250829098.0.10",
+          "Debugger Enabled": true,
+          "CommonJS Modules": "None"
+        },
+        "consoleTimeStamp": "function",
+        "performanceMeasure": "function",
+        "rnStartupTiming": {
+          "startTime": 8283957.661875001,
+          "endTime": 8284610.605958334,
+          "initializeRuntimeStart": 8283957.661541668,
+          "executeJavaScriptBundleEntryPointStart": 8283957.6564166695
+        },
+        "memory": {
+          "jsHeapSizeLimit": null,
+          "totalJSHeapSize": 134217728,
+          "usedJSHeapSize": 113670352
+        },
+        "reactDevToolsHook": [
+          "rendererInterfaces",
+          "listeners",
+          "backends",
+          "renderers",
+          "hasUnsupportedRendererAttached",
+          "emit",
+          "getFiberRoots",
+          "inject",
+          "on",
+          "off",
+          "sub",
+          "supportsFiber",
+          "supportsFlight",
+          "checkDCE",
+          "onCommitFiberUnmount",
+          "onCommitFiberRoot",
+          "onPostCommitFiberRoot",
+          "setStrictMode",
+          "getInternalModuleRanges",
+          "registerInternalModuleStart",
+          "registerInternalModuleStop",
+          "settings",
+          "onScheduleFiberRoot",
+          "resolveRNStyle",
+          "nativeStyleEditorValidAttributes"
+        ],
+        "dev": true,
+        "bridgeless": true,
+        "requireKeys": [
+          "importDefault",
+          "importAll",
+          "context",
+          "resolveWeak",
+          "unguarded",
+          "unpackModuleId",
+          "packModuleId",
+          "Systrace",
+          "getModules"
+        ]
+      }
+    },
+    "eventsSeen": {
+      "Runtime.consoleAPICalled": 379,
+      "Runtime.executionContextCreated": 1,
+      "Debugger.scriptParsed": 30,
+      "Network.requestWillBeSent": 1,
+      "Network.requestWillBeSentExtraInfo": 1,
+      "Tracing.dataCollected": 24,
+      "Tracing.tracingComplete": 1
+    }
+  }
+}

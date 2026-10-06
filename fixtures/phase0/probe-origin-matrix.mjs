@@ -1,0 +1,13 @@
+import { createRequire } from 'node:module';
+const WS = createRequire(import.meta.url)(process.env.WS_PKG ?? '/Users/himanshukushwah/Documents/GitHub/mobile/node_modules/ws');
+const [host, origin, ua] = process.argv.slice(2);
+const url = `ws://${host}:8081/inspector/debug?device=2610c661bf1bc785358b7d25898d16f209bc4889&page=1`;
+const headers = {}; if (origin !== 'none') headers.Origin = origin; if (ua && ua !== 'none') headers['User-Agent'] = ua;
+const ws = new WS(url, { headers });
+const t0 = Date.now(); const ts = () => String(Date.now() - t0).padStart(5);
+let got = 0;
+ws.on('open', () => { setTimeout(() => ws.send(JSON.stringify({ id: 1, method: 'Runtime.evaluate', params: { expression: '1+1', returnByValue: true } })), 300); setTimeout(() => ws.close(), 2500); });
+ws.on('message', (d) => { got++; console.log(`  host=${host} origin=${origin} ua=${ua} ${ts()} <`, d.toString().slice(0, 160)); });
+ws.on('close', (c, r) => { console.log(`host=${host} origin=${origin} ua=${ua} → close ${c} ${r} (msgs=${got})`); process.exit(0); });
+ws.on('error', (e) => console.log(`host=${host} origin=${origin} ua=${ua} → error ${e.message}`));
+ws.on('unexpected-response', (_q, res) => { console.log(`host=${host} origin=${origin} ua=${ua} → HTTP ${res.statusCode}`); process.exit(0); });

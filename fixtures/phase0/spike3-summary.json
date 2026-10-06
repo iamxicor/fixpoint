@@ -1,0 +1,76 @@
+{
+  "booted": "iPhone 17",
+  "steps": {
+    "targets": [
+      {
+        "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+        "deviceName": "iPhone 17",
+        "title": "com.mymeli.mobile (iPhone 17)"
+      },
+      {
+        "id": "3763e4549a51a335dd565537bdc25b7cef1dae64-1",
+        "deviceName": "iPhone",
+        "title": "com.mymeli.mobile (iPhone)"
+      }
+    ],
+    "pickedSimTarget": {
+      "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+      "deviceName": "iPhone 17",
+      "pid": "57277"
+    },
+    "routeProbe.initial": {
+      "error": "router-store module not found"
+    },
+    "deepLinkFormats": {
+      "mymeli://notifications": {
+        "after": "router-store module not found",
+        "targetsNow": 2
+      },
+      "mymeli:///notifications": {
+        "after": "router-store module not found",
+        "targetsNow": 2
+      },
+      "mymeli://--/notifications": {
+        "after": "router-store module not found",
+        "targetsNow": 2
+      },
+      "mymeli://(authenticated)/(tabs)/notifications": {
+        "after": "router-store module not found",
+        "targetsNow": 2
+      }
+    },
+    "workingDeepLink": {},
+    "sim.cpuprofile": {
+      "error": "Profiler.stop timeout"
+    },
+    "sim.heapsnapshot": {
+      "error": "HeapProfiler.collectGarbage timeout"
+    },
+    "routeProbe.beforeSwitch": {
+      "error": "Runtime.evaluate timeout"
+    },
+    "devClientSwitch": {
+      "url": "mymeli://expo-development-client/?url=http%3A%2F%2F127.0.0.1%3A8081",
+      "targetsBefore": [
+        "3763e4549a51a335dd565537bdc25b7cef1dae64-1"
+      ],
+      "timeline": [
+        {
+          "t": 0.5,
+          "pid": "58307",
+          "targets": "3763e4549a51a335dd565537bdc25b7cef1dae64-1"
+        },
+        {
+          "t": 5.5,
+          "pid": "58307",
+          "targets": "3763e4549a51a335dd565537bdc25b7cef1dae64-1,2610c661bf1bc785358b7d25898d16f209bc4889-2"
+        }
+      ],
+      "pidAfter": "58307",
+      "processSurvived": false
+    },
+    "routeProbe.afterSwitch": {
+      "error": "router-store module not found"
+    }
+  }
+}

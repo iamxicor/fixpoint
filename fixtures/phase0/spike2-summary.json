@@ -1,0 +1,102 @@
+{
+  "2610c661bf1bc785358b7d25898d16f209bc4889-1": {
+    "title": "com.mymeli.mobile (iPhone 17)",
+    "id": "2610c661bf1bc785358b7d25898d16f209bc4889-1",
+    "ping": {
+      "ok": true,
+      "value": 2,
+      "ms": 4
+    },
+    "Profiler.start/stop (no enable)": {
+      "ok": true,
+      "nodes": 733,
+      "samples": 105,
+      "timeDeltas": 105,
+      "durationMs": 1193.146,
+      "sampleNodes": [
+        {
+          "callFrame": {
+            "columnNumber": 0,
+            "functionName": "[root]",
+            "lineNumber": 0,
+            "scriptId": "0",
+            "url": "[root]"
+          },
+          "children": [
+            2
+          ],
+          "hitCount": 104,
+          "id": 1
+        },
+        {
+          "callFrame": {
+            "columnNumber": 30,
+            "functionName": "",
+            "lineNumber": 73149,
+            "scriptId": "0",
+            "url": "http://127.0.0.1:8081/node_modules/expo-router/entry.bundle//&platform=ios&dev=true&hot=false&lazy=true&transform.engine=hermes&transform.bytecode=1&transform.routerRoot=app&transform.reactCompiler=true&unstable_transformProfile=hermes-stable"
+          },
+          "children": [
+            3
+          ],
+          "id": 2
+        }
+      ]
+    },
+    "Profiler.setSamplingInterval": {
+      "ok": false,
+      "error": "{\"code\":-32601,\"message\":\"Unsupported method 'Profiler.setSamplingInterval'\"}"
+    },
+    "HeapProfiler.collectGarbage": {
+      "ok": true
+    },
+    "Runtime.getHeapUsage": {
+      "ok": true,
+      "totalSize": 130023424,
+      "usedSize": 97251744
+    },
+    "HeapProfiler.takeHeapSnapshot (no enable)": {
+      "ok": true,
+      "result": {},
+      "chunks": 1966,
+      "bytes": 201260405,
+      "ms": 7246,
+      "nodeCount": 1419672,
+      "edgeCount": 10011241,
+      "nodeFields": [
+        "type",
+        "name",
+        "id",
+        "self_size",
+        "edge_count",
+        "trace_node_id",
+        "detachedness"
+      ],
+      "nodeTypes0": [
+        "hidden",
+        "array",
+        "string",
+        "object",
+        "code",
+        "closure",
+        "regexp",
+        "number",
+        "native",
+        "synthetic",
+        "concatenated string",
+        "sliced string"
+      ],
+      "strings": 226678,
+      "hasTraceInfo": false,
+      "hasLocations": true
+    },
+    "HeapProfiler.startSampling/stopSampling": {
+      "ok": true,
+      "headKeys": [
+        "head",
+        "samples"
+      ],
+      "samples": 37
+    }
+  }
+}
