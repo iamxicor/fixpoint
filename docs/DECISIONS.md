@@ -226,3 +226,49 @@ Node 24.12.0, pnpm 11.1.2, gh 2.83.2 (logged in as iamxicor, ssh), ffmpeg 9.0.2,
 ### 0.12 Go / no-go
 
 Go. Tracing with the React 19.2 tracks and the sampling profiler, symbolication through Metro's map, runtime probes, router-driven navigation and dev-client cold start all work with zero edits to the app. The remaining risks are environmental (shared simulator, reload crash, physical device on the same Metro) and are handled by target filtering, cold start and pid checks rather than by the measurement design.
+
+---
+
+## Phases 1–5 — packages, analyzer, harness, agent layer, init (2026-10-06)
+
+### Monorepo
+
+pnpm workspace, TypeScript project references (`tsc -b`), ESM with NodeNext resolution, vitest, ESLint 9 flat config with typescript-eslint, changesets with the five packages in one fixed group. `tsx` is only a dev convenience; published binaries run from `dist/`.
+
+### devtools
+
+- `pickTarget` filters by `deviceName` (the booted simulator's name) and, within a device, by the highest page number. Both rules come straight from Phase 0 (physical device on the same Metro; page id increments per RN instance).
+- `DevToolsClient.connectTo` tries Origin candidates in order: Expo manifest `debuggerHost`, `127.0.0.1:<port>`, `localhost:<port>`, the Metro URL's own origin. A candidate counts as working only when a `Runtime.evaluate` of `1+1` round-trips within 3 s, because Expo terminates bad-origin sockets *after* the upgrade succeeds.
+- `tracing.record` sends `Debugger.disable` before `Tracing.start` unconditionally.
+- Symbolication passes Hermes line/column to `source-map` 0.6 unchanged (1-based line, 0-based column). React Compiler temporaries (`t0`…) are replaced by the map's `name` or, failing that, by the identifier declared at the original position (Metro maps include `sourcesContent`).
+- Expo Router navigation and route probing go through `__r.getModules()` (a `Map` in Metro's dev runtime, entries carry `verboseName`); the module suffixes `expo-router/build/imperative-api.js` and `expo-router/build/global-state/router-store.js` are the only expo-router internals relied on.
+
+### analyzer
+
+- Commits are Scheduler ⚛ `Render` entries; a component entry belongs to the commit whose render window (extended to the end of `Remaining Effects`) contains it. The component tree is rebuilt by interval containment; self time = own span minus direct children.
+- `wasted-render` counts only renders whose React-provided props diff is deeply equal, element-only, or callback-only (React's own "Referentially unequal function closure" note). Children-only diffs are reported but not counted; they mean the parent re-rendered.
+- With no `RunTask` events (verified absent on RN 0.85), long tasks and frame drops are derived from sampling busy runs and the findings say so in `metric.method` and in `notes`.
+- Findings on library components (CellRenderer, VirtualizedListCellContextProvider…) are located at the nearest app-owned ancestor in the commit tree; app ownership is known from Expo Router's `Name(./route.tsx)` naming or the harness's component index.
+- Heap snapshots are aggregated by constructor from the raw JSON text, reading only `nodes` and `strings`, because a 230 MB snapshot's `edges` array is not needed for growth-by-constructor.
+- Compiler bailouts are collected by running `babel-plugin-react-compiler` from the app's own `node_modules` with a `logger`, over the app's source, without touching its Babel config. Verified against the reference app's own `scripts/check-react-compiler.mjs`, which does the same.
+
+### harness
+
+- Scroll and tap default to a DevTools-driven implementation: the React DevTools hook exposes fiber roots, so the largest mounted vertical `ScrollView` instance can be found and `scrollTo` called with exact offsets, and a `testID`'s nearest `onPress` can be invoked. `idb` (real touches) is used when configured and installed. No app edits either way.
+- Cold start = `simctl terminate` + `openurl` with the dev-client URL, then wait for a *new* inspector page (page number greater than before) and for the router store to report a route. The startup capture (`modulesInitialized`, `rnStartupTiming`) is taken at that moment.
+- A/B pairs are A then B; the first pair is full tracing and discarded; measured pairs use `devtools.timeline,blink.user_timing` only. `renderMs` is Σ Render+Commit+Effects phase durations from scheduler entries, so it is available without the sampling profiler.
+- Noise floor = 95th percentile of |relative A/A pair difference| of `renderMs`; threshold = `max(minEffect, noiseFloor)`. Exact Wilcoxon for n ≤ 20 (the usual 6 pairs) by enumerating sign assignments; bootstrap CI with a seeded PRNG so verdict files are reproducible.
+- Control frames compare self time per symbolicated function in files outside `git diff --name-only base...candidate`; drift is the relative change of their total; three attempts, then `inconclusive`.
+- The replay proxy keys on method + path + SHA-1(body) and in replay mode never calls `fetch`; the test suite asserts the upstream hit count does not move.
+- Worktrees get `.env.development.local` copied (Phase 0 fact) and `node_modules` cloned with `cp -Rc` (APFS clonefile; falls back to a plain copy), so two Metro servers can run without a second install.
+- `foreignDriverEvents` reads `CoreSimulatorBridge` log lines during a run and records them in the verdict, after Phase 0 showed another session driving the same simulator.
+
+### Agent layer
+
+- MCP tools map one-to-one onto harness entry points and return JSON; the long ones (`fixpoint_scan`, `fixpoint_ab`) keep a rolling log in the response.
+- Skills carry the constraints the code cannot enforce: one recipe per PR, draft only, revert on anything but `accept`, the "dev build, iOS Simulator" label.
+- `fixpoint.config.ts` is loaded with jiti and `fixpoint` is aliased to the harness's config module, so an app does not need Fixpoint installed to import `defineConfig`.
+
+### init
+
+`fixpoint init` never evaluates `app.config.ts` (it can import native modules and read secrets); it reads `app.json`, regex-scans `app.config.*` for `scheme` and `bundleIdentifier`, falls back to the Xcode project's `PRODUCT_BUNDLE_IDENTIFIER`, and finds the API base env var by scanning `.env*` and the config for `EXPO_PUBLIC_*API*URL*`. React Native < 0.81 is detected and reported as Profiler-only; v1 does not implement that fallback beyond detection because the React tracks (the primary source) need 19.2 anyway.

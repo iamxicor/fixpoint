@@ -1,0 +1,11 @@
+{
+  "name": "fixpoint",
+  "version": "0.1.0",
+  "description": "Self-improving performance harness for React Native: measure, fix, re-measure, open a PR only when the win survives the gates.",
+  "author": { "name": "Himanshu Kushwah" },
+  "homepage": "https://github.com/iamxicor/fixpoint",
+  "repository": "https://github.com/iamxicor/fixpoint",
+  "license": "MIT",
+  "keywords": ["react-native", "expo", "performance", "mcp", "hermes"],
+  "mcpServers": "./.mcp.json"
+}

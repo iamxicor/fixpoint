@@ -59,7 +59,7 @@ export function parsePropsDiff(properties: unknown): PropsDiff | null {
   }
   const changes: PropChange[] = order.map((key) => {
     const top = !key.startsWith(' ');
-    const name = key.replace(/^ +/, '');
+    const name = key.replace(/^\u00a0+/, '');
     const b = before.get(key);
     const a = after.get(key);
     const note = notes.get(key);

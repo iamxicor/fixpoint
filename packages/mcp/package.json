@@ -6,8 +6,28 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
-  "files": ["dist", "README.md"],
-  "scripts": { "build": "tsc -b", "test": "vitest run" },
-  "dependencies": { "@fixpoint/harness": "workspace:*", "@fixpoint/analyzer": "workspace:*", "@modelcontextprotocol/sdk": "^1.17.0", "zod": "^3.25.0" }, "bin": { "fixpoint-mcp": "./dist/bin.js" }
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fixpoint/harness": "workspace:*",
+    "@fixpoint/analyzer": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "zod": "^3.25.0",
+    "@fixpoint/devtools": "workspace:*"
+  },
+  "bin": {
+    "fixpoint-mcp": "./dist/bin.js"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "fixpoint": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/../packages/mcp/dist/bin.js"],
+      "env": { "FIXPOINT_APP_DIR": "${CLAUDE_PROJECT_DIR}" }
+    }
+  }
+}

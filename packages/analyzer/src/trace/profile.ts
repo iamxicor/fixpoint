@@ -79,10 +79,16 @@ export function busyRuns(tl: SampleTimeline, gapMs = 2): BusyRun[] {
     const t = tl.times[i]!;
     const idle = isIdleNode(node);
     if (idle) {
-      if (cur) runs.push(cur), (cur = null);
+      if (cur) {
+        runs.push(cur);
+        cur = null;
+      }
       continue;
     }
-    if (cur && t - tl.times[cur.sampleEnd]! > gapMs * 1000) runs.push(cur), (cur = null);
+    if (cur && t - tl.times[cur.sampleEnd]! > gapMs * 1000) {
+      runs.push(cur);
+      cur = null;
+    }
     if (!cur) cur = { startUs: t, endUs: t + tl.durations[i]!, durationMs: 0, sampleStart: i, sampleEnd: i };
     cur.sampleEnd = i;
     cur.endUs = t + tl.durations[i]!;

@@ -100,6 +100,9 @@ importers:
       '@fixpoint/analyzer':
         specifier: workspace:*
         version: link:../analyzer
+      '@fixpoint/devtools':
+        specifier: workspace:*
+        version: link:../devtools
       '@fixpoint/harness':
         specifier: workspace:*
         version: link:../harness

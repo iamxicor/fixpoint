@@ -12,6 +12,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/consistent-type-imports': 'error',
+      'no-irregular-whitespace': ['error', { skipComments: true, skipStrings: true, skipTemplates: true }],
     },
   },
 );
