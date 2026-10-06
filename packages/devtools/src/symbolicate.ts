@@ -52,7 +52,7 @@ export class Symbolicator {
       column: null,
       generated: { url: frame.url, line: frame.lineNumber, column: frame.columnNumber },
     };
-    if (!frame.url || !/\.bundle/.test(frame.url)) return base;
+    if (!frame.url || !/\.bundle/.test(frame.url) || !(frame.lineNumber >= 1)) return base;
     const consumer = await this.consumerFor(frame.url);
     if (!consumer) return base;
     // Hermes reports 1-based lines and 0-based columns, which is exactly what source-map expects.
