@@ -177,6 +177,11 @@ export class AppSession {
     if (mode === 'none') return { driver: 'none', offset: this.scrollOffset };
     const next = Math.max(0, this.scrollOffset + (direction === 'down' ? amount : -amount));
     const result = await this.client.runtime.evaluate<string>(SCROLL_JS(next));
+    if (result === 'no-scrollview') {
+      // a screen without a vertical scroll view simply has nothing to scroll; the scenario goes on
+      this.opts.log?.('scroll skipped: no vertical ScrollView mounted');
+      return { driver: 'none', offset: this.scrollOffset };
+    }
     if (result !== 'ok') throw new Error(`scroll failed: ${result}`);
     this.scrollOffset = next;
     await sleep(900);
