@@ -103,7 +103,9 @@ export class AppSession {
     log(`ready at ${route.pathname} after ${readyMs} ms (page ${target.id})`);
     let startup: StartupCaptureResult | null = null;
     if (opts.captureStartup ?? true) {
-      const [modules, timing] = await Promise.all([client.modules.initialized(), client.runtime.startupTiming()]);
+      // sequential: both wait for the busy startup JS thread; the module list is the slow one
+      const timing = await client.runtime.startupTiming();
+      const modules = await client.modules.initialized();
       startup = { modulesInitialized: modules, rnStartupTiming: timing, firstRoute: route.pathname, readyMs };
     }
     return new AppSession(client, opts, appPid(opts.device.udid, opts.bundleId), startup);

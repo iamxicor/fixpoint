@@ -137,9 +137,9 @@ export function devClientRegistry(udid: string, bundleId: string): Record<string
   const plist = prefsPlist(udid, bundleId);
   if (!plist || !existsSync(plist)) return {};
   try {
-    const json = execFileSync('plutil', ['-convert', 'json', '-o', '-', plist], { encoding: 'utf8' });
-    const all = JSON.parse(json) as Record<string, unknown>;
-    return (all[DEV_CLIENT_REGISTRY_KEY] as Record<string, DevClientRegistryEntry>) ?? {};
+    // Extract only this key: other preferences hold binary data that has no JSON form.
+    const json = execFileSync('plutil', ['-extract', DEV_CLIENT_REGISTRY_KEY, 'json', '-o', '-', plist], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    return (JSON.parse(json) as Record<string, DevClientRegistryEntry>) ?? {};
   } catch {
     return {};
   }
@@ -164,7 +164,7 @@ export function setDevClientLastOpened(udid: string, bundleId: string, metroUrl:
     .map(([key, e]) => `<key>${xmlEscape(key)}</key><dict><key>isEASUpdate</key>${e.isEASUpdate ? '<true/>' : '<false/>'}${e.name ? `<key>name</key><string>${xmlEscape(e.name)}</string>` : ''}<key>timestamp</key><integer>${Math.floor(e.timestamp)}</integer><key>url</key><string>${xmlEscape(e.url)}</string></dict>`)
     .join('');
   try {
-    simctl(['spawn', udid, 'defaults', 'write', plist, DEV_CLIENT_REGISTRY_KEY, `<dict>${entries}</dict>`]);
+    execFileSync('xcrun', ['simctl', 'spawn', udid, 'defaults', 'write', plist, DEV_CLIENT_REGISTRY_KEY, `<dict>${entries}</dict>`], { stdio: 'ignore', timeout: 30_000 });
     return true;
   } catch {
     return false;

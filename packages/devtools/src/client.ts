@@ -86,8 +86,10 @@ export class DevToolsClient {
     /** `performance.rnStartupTiming` fields that exist in this build. */
     startupTiming: async (): Promise<StartupTiming | null> =>
       this.runtime.evaluate<StartupTiming | null>(
+        // the JS thread is often busy for seconds right after launch; the reply waits in its queue
         `(function(){ var s = (typeof performance !== 'undefined' && performance.rnStartupTiming) || null; if (!s) return null;
           var o = {}; ['startTime','endTime','initializeRuntimeStart','initializeRuntimeEnd','executeJavaScriptBundleEntryPointStart','executeJavaScriptBundleEntryPointEnd'].forEach(function(k){ if (typeof s[k] === 'number') o[k] = s[k]; }); return o; })()`,
+        60_000,
       ),
     heapUsage: async (): Promise<{ totalSize: number; usedSize: number }> => this.cdp.send('Runtime.getHeapUsage'),
   };
@@ -101,7 +103,7 @@ export class DevToolsClient {
         `(function(){ if (typeof __r !== 'function' || typeof __r.getModules !== 'function') return []; var out = [];
           var m = __r.getModules(); var it = (m instanceof Map) ? m.entries() : Object.entries(m);
           for (var e of it) { var v = e[1]; if (v && v.isInitialized && v.verboseName) out.push(v.verboseName); } return out; })()`,
-        20_000,
+        90_000,
       ),
     count: async (): Promise<{ total: number; initialized: number }> =>
       this.runtime.evaluate<{ total: number; initialized: number }>(
@@ -119,6 +121,7 @@ export class DevToolsClient {
         `(function(){ ${MODULE_LOOKUP} var ex = lookup('expo-router/build/global-state/router-store.js'); if (!ex || !ex.store) return null;
           var s = ex.store; var ri = typeof s.getRouteInfo === 'function' ? s.getRouteInfo() : s.routeInfo; if (!ri) return null;
           return { pathname: ri.pathname, segments: ri.segments, params: ri.params || {}, pathnameWithParams: ri.pathnameWithParams }; })()`,
+        30_000,
       ),
     navigate: async (href: string): Promise<void> => {
       await this.runtime.evaluate(`(function(){ ${MODULE_LOOKUP} var ex = lookup('expo-router/build/imperative-api.js'); if (!ex || !ex.router) throw new Error('expo-router imperative api not found'); ex.router.navigate(${JSON.stringify(href)}); return true; })()`);
